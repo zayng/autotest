@@ -1,1 +1,1 @@
-#autotest
+#A simple test automation project
