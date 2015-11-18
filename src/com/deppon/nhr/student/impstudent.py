@@ -18,8 +18,8 @@ def  notice(driver):
     driver.find_element_by_xpath(u"//button[span[text()='浏览']]").click()
     #调用uoloadfile.exe上传文件
     sleep(1)
-    BIN_HOME=r"D:\119937\workspace\autotest\src\com\deppon\nhr\bin\\"
-    os.system("%suploadfile.exe"%BIN_HOME)
+    BIN_HOME=os.path.abspath(r'..\bin\uploadfile.exe')
+    os.system(BIN_HOME)
     #os.system("D:\\119937\\workspace\\autotest\\src\\com\\deppon\\nhr\\bin\\uploadfile.exe")
      
     #浏览文件路径，input控件

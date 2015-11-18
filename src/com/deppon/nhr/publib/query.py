@@ -6,8 +6,24 @@ Created on 2015年11月9日
 '''
 
 from time import sleep
+import os,csv
+def readcsv():
+    filecsv=os.path.abspath(r'..\bin\class-table.csv')
+#     with open(filecsv) as csvfile:
+#         reader=csv.DictReader(csvfile)
+#         for row in reader:
+#             print(row['name'])
+#     return row['name'],row['li'],row['le']
+        
+    with open(filecsv,'r') as csvfile:
+        reader=csv.DictReader(csvfile)
+        for row in reader:
+            print(row['name'],row['id'])
 
-
+def readdat():
+    filedat=os.path.abspath(r'..\bin\class-name.dat')
+    with open(filedat) as file:
+        return file.readlines()
 
 def queryclass(driver,li=3,le=2,*name):
     
@@ -102,4 +118,6 @@ def queryjudges(driver,*empcode):
     print(u"关闭按钮的元素个数:%s"%len(close))
     close.pop().click()
     
-
+if __name__=='__main__':
+    dat=[line.strip().split('#') for line in readdat()].pop()
+    print(dat)

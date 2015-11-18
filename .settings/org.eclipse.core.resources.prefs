@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/com/deppon/foss/login.py=utf-8
+encoding//src/com/deppon/foss/utest.py=utf-8
+encoding//src/com/deppon/nhr/bin/readfile.py=utf-8
+encoding//src/com/deppon/nhr/judges/task.py=utf-8
+encoding//src/com/deppon/nhr/login/authclass.py=utf-8
+encoding//src/com/deppon/nhr/login/login.py=utf-8
+encoding//src/com/deppon/nhr/main/suite.py=utf-8
+encoding//src/com/deppon/nhr/publib/calendar.py=utf-8
+encoding//src/com/deppon/nhr/publib/query.py=utf-8
+encoding//src/com/deppon/nhr/student/impstudent.py=utf-8
+encoding//src/com/deppon/test/dict.py=utf-8
+encoding//src/com/deppon/test/login.py=utf-8
+encoding//src/com/deppon/test/test.py=utf-8
+encoding//src/com/deppon/test/trys.py=utf-8
+encoding//src/com/deppon/test/xlsr.py=utf-8
