@@ -25,7 +25,7 @@ def readdat():
     with open(filedat) as file:
         return file.readlines()
 
-def queryclass(driver,li=3,le=2,*name):
+def queryclass(driver,li=1,le=1,*name):
     
     ''' 
             查询班级列表    
@@ -35,45 +35,38 @@ def queryclass(driver,li=3,le=2,*name):
     '''
     #输入班级名称
     clname=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classname']")
+    clname.clear()
     clname.send_keys(name)
-    
+    sleep(1)
     #点击认证大类选择框
     #clakind=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']/descendant::td[label[text()='认证大类:']]/following-sibling::td//td[2]")
     #clakind.click()
-    driver.find_element_by_xpath("//input[@name='identificationkind']").click()
+    driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']").click()
     #选择认证大类
-    classli=driver.find_element_by_xpath("//ul[count(li)>=13]/li[%s]"%li)
+    classli=driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s]"%li).pop()
     classli.click()
     
     #选择认证层级下拉框
-    driver.find_element_by_xpath("//input[@name='classlevel']").click()
+    driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classlevel']").click()
     #选择认证层级
-    classle=driver.find_element_by_xpath("//ul[count(li)=4]/li[%s]"%le)
+    classle=driver.find_elements_by_xpath("//ul[count(li)=4]/li[%s]"%le).pop()
     classle.click()
-    
+    sleep(1)
     #点击查询
     query=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//button[span[text()='查询']]")
     query.click()
     
     
-def selectcla(driver,ls=1):
+def selectcla(driver,se=1,*name):
     '''选择显示列表中的班级'''
-    clalis=driver.find_elements_by_xpath("//div[@id='T_authinfo-authClassMng']//tbody/tr")
-    clalev=driver.find_elements_by_xpath("//div[@id='T_authinfo-authClassMng']//tbody/tr/td")
-    clas=[]
-    print(clalis)
-#     for item in clalis:
-#         clas=item.text
-#         print(clas) 
-
-    driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//tr[%i+1]/td[5]"%(ls)).click()
-    
-    stats=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//tr[%s+1]/td[last()-3]"%ls)
-    value=stats.get_attribute("data-qtip")
-    print(value)
-#   cNam=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//div[text()='%s']"%classname)
-#   cNam.click()
-    
+    sleep(3)
+    authlist=driver.find_elements_by_xpath("//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]")
+    if len(authlist)==1:
+        authlist.pop().click()
+    else:
+        authlist.pop(se).click()
+#     cNam=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//div[text()='%s']"%classname)
+#     cNam.click()    
 
 def queryjudges(driver,*empcode):
     '''查询评委工号'''

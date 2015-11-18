@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/com/deppon/foss/login.py=utf-8
 encoding//src/com/deppon/foss/utest.py=utf-8
 encoding//src/com/deppon/nhr/bin/readfile.py=utf-8
+encoding//src/com/deppon/nhr/globalvar.py=utf-8
 encoding//src/com/deppon/nhr/judges/task.py=utf-8
 encoding//src/com/deppon/nhr/login/authclass.py=utf-8
 encoding//src/com/deppon/nhr/login/login.py=utf-8

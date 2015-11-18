@@ -11,6 +11,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 from time import sleep,strftime
 import random,csv,os
+from com.deppon.nhr.globalvar import globalvar
 
   
 
@@ -54,7 +55,6 @@ def identification(driver,li,le):
 def newclass(driver,li=3,le=2):
     ''' 在班级列表，点击新增按钮添加新班级'''
     #生成标示符号
-    classinfo={}
     ran=random.randint(1,9999)
     #新增开班
     classbtn=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
@@ -92,6 +92,7 @@ def newclass(driver,li=3,le=2):
     #保存新开班级
     saClass=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")
     saClass.click()
+    sysdate=strftime('%Y-%m-%d %X')
     sleep(4)
     #获取提示信息，如果保存成功，保存班级名称
     message=u"//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
@@ -103,34 +104,28 @@ def newclass(driver,li=3,le=2):
 #     rk.click()
     rk=u"//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]"
     element=WebDriverWait(driver,10).until(ex.presence_of_element_located((By.XPATH,rk)))
-    sysdate=strftime('%Y-%m-%d %X')
     element.click()
-    classinfo['id']=ran
-    classinfo['name']=name
-    classinfo['li']=li
-    classinfo['le']=le
-    classinfo['ts']=sysdate
-    clalist=[name,li,le,sysdate]
-    print(classinfo)
+    #保存班级记录临时列表
+    gl=globalvar()
+    gl.set_name(ran,name, li, le, sysdate)
     #存储新增班级名称
 
     if msg:
         print("保存新增班级到dat文件")
         filename=os.path.abspath(r'..\bin\class-name.dat')
         filecsv=os.path.abspath(r'..\bin\class-table.csv')
-        file=open(filename,'a')
-        file.write("%s#%s#%s#"%(name,li,le))
-        file.write(sysdate)
+        f=open(filename,'a')
+        f.write("%s#%s#%s#"%(name,li,le))
+        f.write(sysdate)
 #         file.write('#'.join(clalist))
-        file.write('\n')
-        file.close()
+        f.write('\n')
+        f.close()
         print("保存新增班级到CSV文件")
         with open(filecsv,'w',newline='') as csvfile:
             fieldnames=['id','name','li','le','ts']
             writer=csv.DictWriter(csvfile,fieldnames)
             writer.writeheader()
-            writer.writerow(classinfo)
-    return name       
+            writer.writerow(gl.get_class())       
 if __name__=="__main__":
     auth=nhrLogin()
     auth.login()
@@ -138,9 +133,13 @@ if __name__=="__main__":
     driver=auth.driver
     try:
         count=0
-        for li in range(1,3):
+        for li in range(1,2):
             for le in range(1,5):
                 newclass(driver,li,le)
+                g=globalvar()
+                name=g.get_name()
+                dat=g.get_class()
+                print(dat)
                 count+=1
         print("总计新增班级成功:%s"%count)
     finally:  

@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 class nhrLogin():
+    '初始化设置，实现NHR登陆，菜单选择'
     def __init__(self,w=10):
         self.driver=webdriver.Firefox()
         self.driver.implicitly_wait(w)
