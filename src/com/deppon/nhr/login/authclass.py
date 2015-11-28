@@ -57,9 +57,9 @@ def newclass(driver,li=3,le=2):
     #生成标示符号
     ran=random.randint(1,9999)
     #新增开班
-    classbtn=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
-    classbtn.click()
-    
+    print('点击新增开班')
+    newClass_btn=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
+    newClass_btn.click()
     #输入开班名称
     name=u"2015年第%r期认证开班"%(ran)
     print(name)
@@ -107,20 +107,16 @@ def newclass(driver,li=3,le=2):
     element.click()
     #保存班级记录临时列表
     gl=globalvar()
-    gl.set_name(ran,name, li, le, sysdate)
+    gl.set_name(ran,name,li,le,sysdate)
     #存储新增班级名称
 
     if msg:
         print("保存新增班级到dat文件")
         filename=os.path.abspath(r'..\bin\class-name.dat')
-        filecsv=os.path.abspath(r'..\bin\class-table.csv')
-        f=open(filename,'a')
-        f.write("%s#%s#%s#"%(name,li,le))
-        f.write(sysdate)
-#         file.write('#'.join(clalist))
-        f.write('\n')
-        f.close()
+        with open(filename,'a') as f:
+            f.write("%s#%s#%s#%s\n"%(name,li,le,sysdate))
         print("保存新增班级到CSV文件")
+        filecsv=os.path.abspath(r'..\bin\class-table.csv')
         with open(filecsv,'w',newline='') as csvfile:
             fieldnames=['id','name','li','le','ts']
             writer=csv.DictWriter(csvfile,fieldnames)
@@ -143,4 +139,5 @@ if __name__=="__main__":
                 count+=1
         print("总计新增班级成功:%s"%count)
     finally:  
-        auth.logout()
+        pass
+#         auth.logout()

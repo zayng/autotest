@@ -6,24 +6,12 @@ Created on 2015年11月9日
 '''
 
 from time import sleep
-import os,csv
-def readcsv():
-    filecsv=os.path.abspath(r'..\bin\class-table.csv')
-#     with open(filecsv) as csvfile:
-#         reader=csv.DictReader(csvfile)
-#         for row in reader:
-#             print(row['name'])
-#     return row['name'],row['li'],row['le']
-        
-    with open(filecsv,'r') as csvfile:
-        reader=csv.DictReader(csvfile)
-        for row in reader:
-            print(row['name'],row['id'])
-
+import os
 def readdat():
     filedat=os.path.abspath(r'..\bin\class-name.dat')
     with open(filedat) as file:
-        return file.readlines()
+        readlins=[line.strip().split('#') for line in file.readlines()]
+    return readlins
 
 def queryclass(driver,li=1,le=1,*name):
     
@@ -112,5 +100,6 @@ def queryjudges(driver,*empcode):
     close.pop().click()
     
 if __name__=='__main__':
-    dat=[line.strip().split('#') for line in readdat()].pop()
-    print(dat)
+    file=readdat()
+    cla=file.pop()
+    print(cla)

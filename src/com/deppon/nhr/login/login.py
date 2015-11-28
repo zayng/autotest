@@ -33,7 +33,7 @@ class nhrLogin():
         t3=driver.find_element_by_xpath(u"//div[text()='认证']").click()
         sleep(s)
         t4=driver.find_element_by_xpath(u"//div[text()='认证开班管理']").click()
-        sleep(s)
+        sleep(s+1)
         print("进入认证管理")
     def logout(self):
         self.driver.quit()        
