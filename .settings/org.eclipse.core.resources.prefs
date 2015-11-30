@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/com/baidu/login.py=utf-8
 encoding//src/com/deppon/foss/login.py=utf-8
 encoding//src/com/deppon/foss/utest.py=utf-8
 encoding//src/com/deppon/nhr/bin/readfile.py=utf-8
@@ -15,3 +16,4 @@ encoding//src/com/deppon/test/login.py=utf-8
 encoding//src/com/deppon/test/test.py=utf-8
 encoding//src/com/deppon/test/trys.py=utf-8
 encoding//src/com/deppon/test/xlsr.py=utf-8
+encoding//src/com/google/encryp.py=utf-8
