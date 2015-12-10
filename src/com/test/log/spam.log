@@ -1,0 +1,40 @@
+2015-12-10 23:08:09,546 - simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:08:09,546 - simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:08:09,547 - simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:08:09,547 - simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:08:09,547 - simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:08:32,909 - simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:08:32,909 - simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:08:32,910 - simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:08:32,910 - simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:08:32,911 - simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:08:41,786 - simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:08:41,787 - simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:08:41,787 - simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:08:41,787 - simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:08:41,788 - simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:08:51,013 - simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:08:51,013 - simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:08:51,013 - simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:08:51,014 - simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:08:51,014 - simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:09:06,110 = simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:09:06,111 = simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:09:06,111 = simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:09:06,111 = simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:09:06,112 = simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:09:12,782 : simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:09:12,782 : simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:09:12,782 : simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:09:12,783 : simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:09:12,783 : simple_exaple.txt - CRITICAL - critical message
+2015-12-10 23:09:20,690 - simple_exaple.txt - DEBUG - debug message1111111111
+2015-12-10 23:09:20,691 - simple_exaple.txt - INFO - info message22222222222
+2015-12-10 23:09:20,691 - simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-10 23:09:20,692 - simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-10 23:09:20,692 - simple_exaple.txt - CRITICAL - critical message
+2015-12-11 00:03:17,739 : simple_exaple.txt - DEBUG - debug message1111111111中文
+2015-12-11 00:03:17,740 : simple_exaple.txt - INFO - info message22222222222中文
+2015-12-11 00:03:17,740 : simple_exaple.txt - WARNING - warn message 23sdjflsdjfl
+2015-12-11 00:03:17,740 : simple_exaple.txt - ERROR - error message e39098209348u-234up2o34j
+2015-12-11 00:03:17,741 : simple_exaple.txt - CRITICAL - critical message
