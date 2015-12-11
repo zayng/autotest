@@ -1,10 +1,11 @@
 import logging
+import os
 
 class Logger():
-    def __init__(self,name,clevel=logging.DEBUG,flevel=logging.DEBUG):
-        self.logger=logging.getLogger(name)
+    def __init__(self,name=os.path.join(os.path.abspath("../log"),'log.txt'),clevel=logging.DEBUG,flevel=logging.DEBUG):
+        self.logger=logging.getLogger('main')
         self.logger.setLevel(logging.DEBUG)
-        fmt=logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s','%Y-%m-%d %H:%M:%S')
+        fmt=logging.Formatter('[%(asctime)s][%(filename)s](line:%(lineno)d) %(levelname)s %(message)s','%Y-%m-%d %H:%M:%S')
         #日志从控制台输出
         sh=logging.StreamHandler()
         sh.setLevel(clevel)
@@ -32,7 +33,7 @@ class Logger():
         self.logger.critical(msg)
         
 if __name__=='__main__':
-    log=Logger('yx.txt',logging.ERROR,logging.DEBUG)
+    log=Logger(clevel=logging.ERROR,flevel=logging.DEBUG)
     log.info("一个info信息")
     log.debug("一个debug信息")
     log.warn("一个warning信息")

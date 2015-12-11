@@ -1,0 +1,71 @@
+[2015-12-11 11:25:31] log4.py[line:24] INFO 一个info信息
+[2015-12-11 11:25:31] log4.py[line:21] DEBUG 一个debug信息
+[2015-12-11 11:25:31] log4.py[line:27] WARNING 一个warning信息
+[2015-12-11 11:25:31] log4.py[line:30] ERROR 一个error信息
+[2015-12-11 11:25:31] log4.py[line:33] CRITICAL 一个致命的criticl信息
+[2015-12-11 14:37:47] log4.py[line:24] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-11 14:38:01] log4.py[line:24] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-11 14:38:11] log4.py[line:24] INFO logon success!!!
+[2015-12-11 14:41:45][ log4.py(line:24)] INFO 一个info信息
+[2015-12-11 14:41:45][ log4.py(line:21)] DEBUG 一个debug信息
+[2015-12-11 14:41:45][ log4.py(line:27)] WARNING 一个warning信息
+[2015-12-11 14:41:45][ log4.py(line:30)] ERROR 一个error信息
+[2015-12-11 14:41:45][ log4.py(line:33)] CRITICAL 一个致命的criticl信息
+[2015-12-11 14:42:00][ log4.py](line:24) INFO 一个info信息
+[2015-12-11 14:42:00][ log4.py](line:21) DEBUG 一个debug信息
+[2015-12-11 14:42:00][ log4.py](line:27) WARNING 一个warning信息
+[2015-12-11 14:42:00][ log4.py](line:30) ERROR 一个error信息
+[2015-12-11 14:42:00][ log4.py](line:33) CRITICAL 一个致命的criticl信息
+[2015-12-11 14:42:14][log4.py](line:24) INFO 一个info信息
+[2015-12-11 14:42:14][log4.py](line:21) DEBUG 一个debug信息
+[2015-12-11 14:42:14][log4.py](line:27) WARNING 一个warning信息
+[2015-12-11 14:42:14][log4.py](line:30) ERROR 一个error信息
+[2015-12-11 14:42:14][log4.py](line:33) CRITICAL 一个致命的criticl信息
+[2015-12-11 16:04:15][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:04:15][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:04:52][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:04:52][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:05:06][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:05:06][log4.py](line:24) INFO 。。。。。。初始化设置。。。。。
+[2015-12-11 16:05:12][log4.py](line:24) INFO NHR登陆测试
+[2015-12-11 16:05:12][log4.py](line:24) INFO 启动FireFox浏览器，打开url.
+[2015-12-11 16:05:12][log4.py](line:24) INFO 使用账号登陆NHR系统
+[2015-12-11 16:05:12][log4.py](line:24) INFO 登陆账号:231432
+[2015-12-11 16:05:12][log4.py](line:24) INFO 登陆密码qqqqqq
+[2015-12-11 16:05:48][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:05:48][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:05:48][log4.py](line:24) INFO 。。。。。。初始化设置。。。。。
+[2015-12-11 16:05:54][log4.py](line:24) INFO 打开导航
+[2015-12-11 16:05:54][log4.py](line:24) INFO 选择菜单节点
+[2015-12-11 16:06:00][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:06:57][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:06:57][log4.py](line:24) INFO NHR登陆测试
+[2015-12-11 16:06:57][log4.py](line:24) INFO 。。。。。。初始化设置。。。。。
+[2015-12-11 16:07:04][log4.py](line:24) INFO 启动FireFox浏览器，打开url.
+[2015-12-11 16:07:04][log4.py](line:24) INFO 使用账号登陆NHR系统
+[2015-12-11 16:07:04][log4.py](line:24) INFO 登陆账号:231432
+[2015-12-11 16:07:04][log4.py](line:24) INFO 登陆密码qqqqqq
+[2015-12-11 16:07:40][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:07:40][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:07:40][log4.py](line:24) INFO 打开导航
+[2015-12-11 16:07:40][log4.py](line:24) INFO 选择菜单节点
+[2015-12-11 16:07:40][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:10:48][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:10:48][log4.py](line:24) INFO NHR登陆测试
+[2015-12-11 16:10:48][log4.py](line:24) INFO 。。。。。。初始化设置。。。。。
+[2015-12-11 16:10:53][log4.py](line:24) INFO 启动FireFox浏览器，打开url.
+[2015-12-11 16:10:54][log4.py](line:24) INFO 使用账号登陆NHR系统
+[2015-12-11 16:10:54][log4.py](line:24) INFO 登陆账号:231432
+[2015-12-11 16:10:54][log4.py](line:24) INFO 登陆密码:qqqqqq
+[2015-12-11 16:11:29][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:11:29][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:11:29][log4.py](line:24) INFO 打开导航
+[2015-12-11 16:11:29][log4.py](line:24) INFO 选择菜单节点
+[2015-12-11 16:11:29][log4.py](line:24) INFO 测试用例执行完毕
+[2015-12-11 16:12:16][log4.py](line:24) INFO 开始执行测试用例
+[2015-12-11 16:12:16][log4.py](line:24) INFO 。。。。。。初始化设置。。。。。
+[2015-12-11 16:12:23][log4.py](line:24) INFO 启动FireFox浏览器，打开url.
+[2015-12-11 16:12:24][log4.py](line:24) INFO 使用账号登陆NHR系统
+[2015-12-11 16:12:24][log4.py](line:24) INFO 登陆账号:231432
+[2015-12-11 16:12:24][log4.py](line:24) INFO 登陆密码:qqqqqq
+[2015-12-11 16:13:00][log4.py](line:24) INFO 测试用例执行完毕

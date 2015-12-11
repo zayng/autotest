@@ -10,17 +10,17 @@ from time import sleep
 
 class nhrLogin():
     '初始化设置，实现NHR登陆，菜单选择'
-    def __init__(self,w=10):
+    def __init__(self):
         self.driver=webdriver.Firefox()
-        self.driver.implicitly_wait(w)
         self.url="http://192.168.68.125:8080/nhr/login/index.action"
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
         
     def login(self,user="231432",password="qqqqqq"):
         self.driver.get(self.url)
         self.driver.find_element_by_id("loginName").send_keys(user)
         self.driver.find_element_by_id("password").send_keys(password)
         self.driver.find_element_by_class_name("a_login").click()
-        self.driver.maximize_window()
         print("NHR登陆成功")
         
     def menu(self,s=2):

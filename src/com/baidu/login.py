@@ -28,6 +28,7 @@ class Baidu(unittest.TestCase):
         driver.find_element_by_id("kw").send_keys("selenium")
         driver.find_element_by_id("su").click()
         driver.find_element_by_link_text(u"功能自动化测试工具——Selenium篇").click()
+        self.assertEqual(driver.title,"selenium")
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
