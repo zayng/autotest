@@ -13,8 +13,8 @@ from time import sleep,strftime
 import random,csv,os
 from com.deppon.nhr.globalvar import globalvar
 from com.deppon.nhr import log
-# from com.deppon.nhr import dicts
-from com.deppon.nhr.publib.dicts import lev
+from com.deppon.nhr.publib.datdict import lev
+
 
 
           
