@@ -7,8 +7,7 @@ Created on 2015年11月2日
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
-from com.deppon.nhr import Logger
-import logging
+from com.deppon.nhr import *
 
 log=Logger()
 

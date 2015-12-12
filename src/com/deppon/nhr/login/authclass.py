@@ -12,73 +12,84 @@ from selenium.webdriver.support import expected_conditions as ex
 from time import sleep,strftime
 import random,csv,os
 from com.deppon.nhr.globalvar import globalvar
+from com.deppon.nhr import log
+# from com.deppon.nhr import dicts
+from com.deppon.nhr.publib.dicts import lev
 
-  
+
+          
 
 def identification(driver,li,le):
     '''新增开班，选择认证大类和层级 '''
-
-    print("选择认证大类")
+    log.info("call success!!!")
+    log.info("选择认证大类")
     #点击认证大类下拉选择框
     ciIdenti=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='identificationkind']")
     ciIdenti.click()
 
     #选择具体大类//body/div[contains(@id,'boundlist')]//li[text()='IT类']
-    seLarge=driver.find_element_by_xpath("//ul[count(li)=13]/li[%s]"%li)
+    seLarge=driver.find_element_by_xpath("//ul[count(li)=13]/li[%s]"%(li+1))
     seLarge.click()
     
-    print("选择认证层级")
+    log.info("选择认证层级")
     #点击认证层级下拉选择框
     ciLeve=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']")
     ciLeve.click()
-    
+    log.info("选择认证层级")
     #选择层级
-    seLeve=driver.find_element_by_xpath("//ul[count(li)=4]/li[%s]"%le)
+    seLeve=driver.find_element_by_xpath("//ul[count(li)=4]/li[%s]"%(le+1))
     seLeve.click()
-    
-    if le in [1,2,3]:
+    log.info("填写笔试成绩占比")
+    if le in [0,1,2]:
         #专业笔试成绩
+        log.info("填写专业笔试成绩占比")
         writtenratio=driver.find_element_by_name("writtenratio")
         writtenratio.clear()
         if li in range(4,7):
             writtenratio.send_keys(0)
         else:
             writtenratio.send_keys(20)        
-    elif le == 4:
+    elif le == 3:
         #专业影响力
+        log.info("填写专业影响力占比")
         majorratio=driver.find_element_by_name("majorratio")
         majorratio.clear()
         majorratio.send_keys(10)
     else:
-        print("选择认证层级参数错误")
+        log.error("填写笔试成绩咱比异常")
 
-def newclass(driver,li=3,le=2):
+def newclass(driver,li=2,le=1):
     ''' 在班级列表，点击新增按钮添加新班级'''
     #生成标示符号
     ran=random.randint(1,9999)
     #新增开班
-    print('点击新增开班')
+    log.info('点击新增开班')
     newClass_btn=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
     newClass_btn.click()
     #输入开班名称
+    log.info("使用随机函数random.randint,生成班级名称和地点")
     name=u"2015年第%r期认证开班"%(ran)
-    print(name)
+    log.info("班级名称生成成功，生成班级名称："+name)
+    log.info("输入班级名称")
     classNa=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
     classNa.send_keys(name)
     
     #输入地点
     addr=u"德邦学院D%r"%random.randint(100,200)
-    print(addr)
+    log.info("开班地点生成成功，生成地点名称："+addr)
+    log.info("输入开班地址")
     address=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='address']")
     address.send_keys(addr)
     
     #选择认证类型与认证层级
+    log.info("选择认证类型和认证层级，开始调用identification函数")
     identification(driver,li,le)
     
-    print("选择开始时间")
+    log.info("选择班级开始时间和结束时间")
     #选择开始时间
     newBegin=driver.find_element_by_xpath(u"//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]")
     newBegin.click()
+    
     #调用时间控件选择开始时间
     calendar(driver,fg=0)
     
@@ -86,9 +97,10 @@ def newclass(driver,li=3,le=2):
     newEnd=driver.find_element_by_xpath(u"//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]")
     newEnd.click()
     
-    #调用时间控件选择开始时间
-    calendar(driver,23,30,20,yy=2015,mm=11,dd=30,fg=1)
-      
+    #调用时间控件选择结束时间
+    calendar(driver,23,30,20,yy=2015,mm=12,dd=30,fg=1)
+     
+    log.info("开始保存新增班级.....")  
     #保存新开班级
     saClass=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")
     saClass.click()
@@ -99,7 +111,7 @@ def newclass(driver,li=3,le=2):
     msg=WebDriverWait(driver,10).until(ex.text_to_be_present_in_element((By.XPATH,message),u'保存成功'))
      
     #确定保存
-    print("保存新增班级")
+    log.info("新增班级成功，新增班级名称："+name)
 #     rk=driver.find_element_by_xpath(u"//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]")
 #     rk.click()
     rk=u"//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]"
@@ -111,11 +123,11 @@ def newclass(driver,li=3,le=2):
     #存储新增班级名称
 
     if msg:
-        print("保存新增班级到dat文件")
+        log.info("保存新增班级到dat文件")
         filename=os.path.abspath(r'..\bin\class-name.dat')
         with open(filename,'a') as f:
             f.write("%s#%s#%s#%s\n"%(name,li,le,sysdate))
-        print("保存新增班级到CSV文件")
+        log.info("保存新增班级到CSV文件")
         filecsv=os.path.abspath(r'..\bin\class-table.csv')
         with open(filecsv,'w',newline='') as csvfile:
             fieldnames=['id','name','li','le','ts']
@@ -129,15 +141,16 @@ if __name__=="__main__":
     driver=auth.driver
     try:
         count=0
-        for li in range(1,2):
-            for le in range(1,5):
+        for li in range(2):
+            for le in range(4):
+                log.info("创建新开班的认证和层级："+lev(li,le))
                 newclass(driver,li,le)
                 g=globalvar()
                 name=g.get_name()
                 dat=g.get_class()
-                print(dat)
+                log.info("保存班级信息到列表:"+str(dat))
                 count+=1
-        print("总计新增班级成功:%s"%count)
+                log.info("已经累计新增班级：%d"%(count))
     finally:  
         pass
 #         auth.logout()

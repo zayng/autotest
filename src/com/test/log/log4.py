@@ -33,7 +33,7 @@ class Logger():
         self.logger.critical(msg)
         
 if __name__=='__main__':
-    log=Logger(clevel=logging.ERROR,flevel=logging.DEBUG)
+    log=Logger()
     log.info("一个info信息")
     log.debug("一个debug信息")
     log.warn("一个warning信息")

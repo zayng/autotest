@@ -98,7 +98,7 @@ def queryjudges(driver,*empcode):
     close=driver.find_elements_by_xpath("//button[span[text()='关闭']]")
     print(u"关闭按钮的元素个数:%s"%len(close))
     close.pop().click()
-    
+ 
 if __name__=='__main__':
     file=readdat()
     cla=file.pop()
