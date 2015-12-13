@@ -1,3 +1,8 @@
+'''
+Created on 2015年11月2日
+
+@author: 119937
+'''
 import logging
 import os
 
@@ -16,23 +21,24 @@ class Logger():
         fh.setFormatter(fmt)
         self.logger.addHandler(sh)
         self.logger.addHandler(fh)
+        
+    def debug(self,msg):
+        self.logger.debug(msg)
+     
+    def info(self,msg):
+        self.logger.info(msg)
+         
+    def warn(self,msg):
+        self.logger.warn(msg)
+         
+    def error(self,msg):
+        self.logger.error(msg)
+         
+    def critical(self,msg):
+        self.logger.critical(msg)
+    
     def get_log(self):
         return self.logger
-        
-#     def debug(self,msg):
-#         self.logger.debug(msg)
-#     
-#     def info(self,msg):
-#         self.logger.info(msg)
-#         
-#     def warn(self,msg):
-#         self.logger.warn(msg)
-#         
-#     def error(self,msg):
-#         self.logger.error(msg)
-#         
-#     def critical(self,msg):
-#         self.logger.critical(msg)
         
 def Logger1(name=os.path.join(os.path.abspath('../log'),'log1.txt'),clevel=logging.DEBUG,flevel=logging.DEBUG):
     logger=logging.getLogger('brunch')
