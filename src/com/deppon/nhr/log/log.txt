@@ -2341,3 +2341,15 @@ Stacktrace:
 [2015-12-15 15:30:36] login2.py[line:75] INFO 登录成功，进入NHR欢迎界面
 [2015-12-15 15:30:38] login2.py[line:39] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
 [2015-12-15 15:30:44] login2.py[line:46] INFO 打开认证管理界面
+[2015-12-15 19:16:31] login.py[line:16] INFO 开始测试......
+[2015-12-15 19:16:31] login.py[line:17] INFO 进行测试初始化工作
+[2015-12-15 19:16:37] login.py[line:22] INFO 初始化工作完毕
+[2015-12-15 19:16:37] login.py[line:25] DEBUG 打开系统链接:http://192.168.68.125:8080/nhr/login/index.action
+[2015-12-15 19:16:37] login.py[line:27] DEBUG 使用测试工号：231432
+[2015-12-15 19:16:37] login.py[line:28] DEBUG 测试密码：qqqqqq
+[2015-12-15 19:16:42] login.py[line:32] INFO NHR login success!!!
+[2015-12-15 19:16:44] login.py[line:37] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 19:16:54] login.py[line:46] INFO 进入认证管理
+[2015-12-15 19:17:03] calendar.py[line:17] INFO 切换到日历控件选择日期
+[2015-12-15 19:17:04] calendar.py[line:24] INFO 选择日期
+[2015-12-15 19:17:04] calendar.py[line:35] INFO 选择时间

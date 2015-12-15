@@ -73,7 +73,6 @@ def queryjudges(driver,*empcode):
         print(empcode[emp])
         p.send_keys(empcode[emp])
         
-        
         #点击查询
         queryBtn="//div[contains(@id,'button') and @style='border-width: 1px; left: 293px; margin: 0px; top: 0px; width: 75px;']//button[span[text()='查询']]"
         query=driver.find_elements_by_xpath(queryBtn)
@@ -81,19 +80,16 @@ def queryjudges(driver,*empcode):
         query.pop().click()
         
         sleep(2)
-        
         #选择工号
         psncode=driver.find_elements_by_xpath("//tr[count(td)=10]/td[1]")
         psncode.pop().click()
 #         for code in psncode[-10:]:
 #             code.click()
-            
         #点击确定
         confirmstr=u"//div[em[button[span[text()='清空收件人']]]]/preceding-sibling::div//button[span[text()='确定']]"
         confirm=driver.find_elements_by_xpath(confirmstr)
         confirm.pop().click()
         
-                
     #点击关闭按钮
     close=driver.find_elements_by_xpath("//button[span[text()='关闭']]")
     print(u"关闭按钮的元素个数:%s"%len(close))

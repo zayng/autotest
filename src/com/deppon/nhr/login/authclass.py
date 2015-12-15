@@ -13,7 +13,7 @@ from time import sleep,strftime
 import random,csv,os
 from com.deppon.nhr.globalvar import globalvar
 from com.deppon.nhr import log
-from com.deppon.nhr.publib.datdict import data
+from com.deppon.nhr.publib.datdict import dat
 
 def identification(driver,li,le):
     '''新增开班，选择认证大类和层级 '''
@@ -22,11 +22,9 @@ def identification(driver,li,le):
     #点击认证大类下拉选择框
     ciIdenti=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='identificationkind']")
     ciIdenti.click()
-
     #选择具体大类//body/div[contains(@id,'boundlist')]//li[text()='IT类']
     seLarge=driver.find_element_by_xpath("//ul[count(li)=13]/li[%s]"%(li+1))
     seLarge.click()
-    
     log.info("选择认证层级")
     #点击认证层级下拉选择框
     ciLeve=driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']")
@@ -139,7 +137,7 @@ if __name__=="__main__":
         count=0
         for li in range(2):
             for le in range(4):
-                log.info("创建新开班的认证和层级："+data(li,le))
+                log.info("创建新开班的认证和层级："+dat(li,le))
                 newclass(driver,li,le)
                 g=globalvar()
                 name=g.get_name()
