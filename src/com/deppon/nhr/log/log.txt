@@ -1770,3 +1770,574 @@
 [2015-12-13 17:17:05] authclass.py[line:126] INFO 保存新增班级到CSV文件
 [2015-12-13 17:17:05] authclass.py[line:147] INFO 保存班级信息到列表:{'li': 1, 'le': 3, 'name': '2015年第7823期认证开班', 'ts': '2015-12-13 17:17:01', 'id': 7823}
 [2015-12-13 17:17:05] authclass.py[line:149] INFO 已经累计新增班级：8
+[2015-12-15 08:53:58] login2.py[line:15] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 08:54:09] login2.py[line:20] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-15 08:54:27] login2.py[line:25] INFO logon success!!!
+[2015-12-15 09:06:24] login2.py[line:15] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:05:58] login2.py[line:15] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:06:04] login2.py[line:20] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-15 10:06:10] login2.py[line:25] INFO logon success!!!
+[2015-12-15 10:06:12] login2.py[line:30] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 10:06:18] login2.py[line:37] INFO 打开认证管理界面
+[2015-12-15 10:37:52] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:37:58] login2.py[line:22] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 10:38:30] login2.py[line:58] INFO 登录失败
+[2015-12-15 10:44:16] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:44:22] login2.py[line:22] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 10:44:53] login2.py[line:58] INFO 登录失败
+[2015-12-15 10:49:51] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:49:57] login2.py[line:22] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 10:50:28] login2.py[line:58] INFO 登录失败
+[2015-12-15 10:50:28] login2.py[line:59] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp1cy7h7k1/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp1cy7h7k1/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 10:50:28] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:50:34] login2.py[line:22] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 10:51:05] login2.py[line:58] INFO 登录失败
+[2015-12-15 10:51:05] login2.py[line:59] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp6pyac6eo/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp6pyac6eo/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 10:51:05] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:51:13] login2.py[line:22] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 10:51:46] login2.py[line:58] INFO 登录失败
+[2015-12-15 10:51:46] login2.py[line:59] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmpzq1plopb/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmpzq1plopb/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 10:51:46] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 10:51:52] login2.py[line:22] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 11:01:51] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:02:04] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:02:39] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:02:39] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:02:39] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 11:03:12] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:03:12] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:03:12] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 11:03:46] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:03:46] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:03:46] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 11:03:51] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:03:57] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:04:19] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:04:19] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp2p2iya4v/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:04:20] login2.py[line:23] INFO logon nhrusername:028197 password:233223
+
+[2015-12-15 11:04:33] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:04:33] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmpq5h70xbl/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmpq5h70xbl/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:04:33] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 11:07:55] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:08:01] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:08:35] login2.py[line:62] INFO 登录失败
+[2015-12-15 11:08:35] login2.py[line:63] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp0pwht23c/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp0pwht23c/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:08:35] login2.py[line:76] INFO 刷新火狐浏览器。
+[2015-12-15 11:20:17] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:20:22] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:25:33] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:25:38] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:25:47] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:25:47] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:25:47] login2.py[line:82] INFO 刷新火狐浏览器。
+[2015-12-15 11:25:48] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 11:25:56] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:25:56] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:25:56] login2.py[line:82] INFO 刷新火狐浏览器。
+[2015-12-15 11:25:56] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 11:26:05] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:26:05] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmp0a8jr701/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:26:05] login2.py[line:82] INFO 刷新火狐浏览器。
+[2015-12-15 11:26:05] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 11:35:42] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:35:47] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:35:56] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:35:56] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:35:56] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:35:56] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 11:36:05] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:36:05] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:36:05] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:36:05] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 11:36:13] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:36:13] login2.py[line:69] INFO Message: Unable to locate element: {"method":"xpath","selector":"//div[@id='mainAreaPanel']"}
+Stacktrace:
+    at FirefoxDriver.prototype.findElementInternal_ (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+    at fxdriver.Timer.prototype.setTimeout/<.notify (file:///C:/Users/119937/AppData/Local/Temp/tmpu4ukioia/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+[2015-12-15 11:36:13] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:36:14] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 11:43:07] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 11:43:13] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 11:43:21] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:43:21] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:43:22] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 11:43:30] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:43:30] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:43:30] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 11:43:39] login2.py[line:68] INFO 登录失败
+[2015-12-15 11:43:39] login2.py[line:82] INFO 重新读取账号和密码登录。
+[2015-12-15 11:43:39] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 12:03:53] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 12:03:59] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 12:04:00] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:04:08] login2.py[line:69] INFO 登录失败
+[2015-12-15 12:04:08] login2.py[line:83] INFO 重新读取账号和密码登录。
+[2015-12-15 12:04:08] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 12:04:08] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:04:17] login2.py[line:69] INFO 登录失败
+[2015-12-15 12:04:17] login2.py[line:83] INFO 重新读取账号和密码登录。
+[2015-12-15 12:04:17] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 12:04:17] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:04:25] login2.py[line:69] INFO 登录失败
+[2015-12-15 12:04:25] login2.py[line:83] INFO 重新读取账号和密码登录。
+[2015-12-15 12:04:26] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 12:04:26] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:08:10] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 12:08:16] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 12:08:17] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:08:20] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 12:08:25] login2.py[line:70] INFO 登录失败
+[2015-12-15 12:08:25] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 12:08:25] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 12:08:25] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:08:28] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 12:08:34] login2.py[line:70] INFO 登录失败
+[2015-12-15 12:08:34] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 12:08:34] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 12:08:34] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 12:08:37] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 12:08:42] login2.py[line:70] INFO 登录失败
+[2015-12-15 12:08:42] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 12:08:42] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 12:08:43] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:17:15] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:17:22] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:17:23] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:17:27] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:17:32] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:17:32] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 14:17:32] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:17:32] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:17:36] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:17:41] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:17:41] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 14:17:41] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:17:41] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:17:44] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:17:49] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:17:49] login2.py[line:84] INFO 重新读取账号和密码登录。
+[2015-12-15 14:17:50] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:17:50] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:27:14] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:27:20] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:27:21] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:27:24] login2.py[line:80] INFO 校验NHR是否登录成功
+[2015-12-15 14:27:24] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:27:29] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:27:29] login2.py[line:85] INFO 重新读取账号和密码登录。
+[2015-12-15 14:27:29] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:27:30] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:27:33] login2.py[line:80] INFO 校验NHR是否登录成功
+[2015-12-15 14:27:33] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:27:38] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:27:38] login2.py[line:85] INFO 重新读取账号和密码登录。
+[2015-12-15 14:27:38] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:27:38] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:27:42] login2.py[line:80] INFO 校验NHR是否登录成功
+[2015-12-15 14:27:42] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:27:47] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:27:47] login2.py[line:85] INFO 重新读取账号和密码登录。
+[2015-12-15 14:27:47] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:27:47] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:31:55] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:32:01] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:32:02] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:32:05] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:32:05] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:32:10] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:32:10] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:32:11] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:32:11] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:32:14] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:32:14] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:32:19] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:32:19] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:32:19] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:32:19] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:32:23] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:32:23] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:32:28] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:32:28] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:32:28] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:32:28] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:35:50] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:35:56] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:35:57] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:36:00] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:36:00] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:36:05] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:36:05] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:36:05] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:36:05] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:36:08] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:36:08] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:36:14] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:36:14] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:36:14] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:36:14] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:36:17] login2.py[line:80] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:36:17] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:36:22] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:36:22] login2.py[line:86] INFO 重新读取账号和密码登录。
+[2015-12-15 14:36:22] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:36:23] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:37:21] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:37:26] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:37:27] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:37:30] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:37:30] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:37:36] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:37:36] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:37:36] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:37:36] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:37:39] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:37:39] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:37:44] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:37:44] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:37:44] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:37:45] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:37:48] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:37:48] login2.py[line:64] INFO 检查是否登录成功.
+[2015-12-15 14:37:53] login2.py[line:70] INFO 登录失败
+[2015-12-15 14:37:53] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:37:53] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:37:53] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:39:23] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:39:28] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:39:29] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:39:29] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:39:32] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:39:32] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:39:37] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:39:37] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:39:38] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:39:38] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:39:38] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:39:41] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:39:41] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:39:46] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:39:46] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:39:46] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:39:46] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:39:47] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:39:50] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:39:50] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:39:55] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:39:55] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:39:55] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:39:55] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:42:41] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:42:47] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:42:48] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:42:48] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:42:51] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:42:51] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:42:56] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:42:56] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:42:56] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:42:56] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:42:56] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:42:59] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:42:59] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:43:04] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:43:04] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:43:05] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:43:05] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:43:05] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 14:43:08] login2.py[line:82] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:43:08] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:43:13] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:43:13] login2.py[line:88] INFO 重新读取账号和密码登录。
+[2015-12-15 14:43:13] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:43:13] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:47:27] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:47:33] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:47:34] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:47:37] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:47:37] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:47:42] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:47:42] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:47:42] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:47:42] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:47:45] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:47:45] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:47:50] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:47:50] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:47:51] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:47:51] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:47:54] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:47:54] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:47:59] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:47:59] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:47:59] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:47:59] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:48:02] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:48:03] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:48:04] login2.py[line:68] INFO 登录成功.
+[2015-12-15 14:48:04] login2.py[line:84] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 14:48:06] login2.py[line:38] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 14:48:12] login2.py[line:45] INFO 打开认证管理界面
+[2015-12-15 14:49:02] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:49:09] login2.py[line:23] INFO logon nhrusername:username password:pwd
+
+[2015-12-15 14:49:10] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:49:13] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:49:13] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:49:18] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:49:18] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:49:18] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+
+[2015-12-15 14:49:18] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:49:21] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:49:21] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:49:26] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:49:26] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:49:26] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+
+[2015-12-15 14:49:27] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:49:30] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:49:30] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:49:35] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:49:35] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:49:35] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+
+[2015-12-15 14:49:35] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:49:38] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:49:39] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:49:40] login2.py[line:68] INFO 登录成功.
+[2015-12-15 14:49:40] login2.py[line:84] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 14:49:42] login2.py[line:38] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 14:49:49] login2.py[line:45] INFO 打开认证管理界面
+[2015-12-15 14:49:54] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:50:00] login2.py[line:23] INFO logon nhrusername:username password:pwd
+.
+[2015-12-15 14:50:01] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:50:04] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:50:04] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:50:09] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:50:09] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:50:09] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+.
+[2015-12-15 14:50:09] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:50:12] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:50:12] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:50:17] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:50:17] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:50:18] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+.
+[2015-12-15 14:50:18] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:50:21] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:50:21] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:50:26] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:50:26] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:50:26] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+.
+[2015-12-15 14:50:26] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:50:29] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:50:30] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:50:31] login2.py[line:68] INFO 登录成功.
+[2015-12-15 14:50:31] login2.py[line:84] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 14:50:33] login2.py[line:38] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 14:50:40] login2.py[line:45] INFO 打开认证管理界面
+[2015-12-15 14:52:56] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 14:53:04] login2.py[line:23] INFO logon nhrusername:username password:pwd
+[2015-12-15 14:53:04] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:53:07] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:53:07] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:53:12] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:53:12] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:53:12] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+[2015-12-15 14:53:13] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:53:16] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:53:16] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:53:21] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:53:21] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:53:21] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+[2015-12-15 14:53:21] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:53:24] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:53:24] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:53:29] login2.py[line:71] INFO 登录失败
+[2015-12-15 14:53:29] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 14:53:29] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-15 14:53:30] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 14:53:33] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 14:53:33] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 14:53:34] login2.py[line:68] INFO 登录成功.
+[2015-12-15 14:53:34] login2.py[line:84] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 14:53:36] login2.py[line:38] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 14:53:43] login2.py[line:45] INFO 打开认证管理界面
+[2015-12-15 15:24:12] login2.py[line:16] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 15:24:35] login2.py[line:23] INFO logon nhrusername:username password:pwd
+[2015-12-15 15:24:36] login2.py[line:23] INFO logon nhrusername:username password:pwd
+[2015-12-15 15:24:40] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 15:24:41] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 15:24:41] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 15:24:41] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 15:24:44] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:24:44] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 15:24:44] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:24:49] login2.py[line:71] INFO 登录失败
+[2015-12-15 15:24:49] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 15:24:50] login2.py[line:23] INFO logon nhrusername:119937 password:111222
+[2015-12-15 15:24:50] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 15:24:51] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 15:24:54] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:24:54] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 15:24:59] login2.py[line:71] INFO 登录失败
+[2015-12-15 15:24:59] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 15:24:59] login2.py[line:23] INFO logon nhrusername:116460 password:222222
+[2015-12-15 15:24:59] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 15:24:59] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 15:25:02] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:25:02] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 15:25:08] login2.py[line:71] INFO 登录失败
+[2015-12-15 15:25:08] login2.py[line:87] INFO 重新读取账号和密码登录。
+[2015-12-15 15:25:08] login2.py[line:23] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-15 15:25:08] login2.py[line:30] INFO 点击登录按钮
+[2015-12-15 15:25:15] login2.py[line:32] INFO 点击登录按钮完毕
+[2015-12-15 15:25:18] login2.py[line:81] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:25:18] login2.py[line:65] INFO 检查是否登录成功.
+[2015-12-15 15:25:18] login2.py[line:68] INFO 登录成功.
+[2015-12-15 15:25:18] login2.py[line:84] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 15:25:20] login2.py[line:38] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 15:25:27] login2.py[line:45] INFO 打开认证管理界面
+[2015-12-15 15:29:56] login2.py[line:17] INFO 初始化设置，实现NHR登陆，菜单选择
+[2015-12-15 15:30:01] login2.py[line:24] INFO logon nhrusername:username password:pwd
+[2015-12-15 15:30:02] login2.py[line:31] INFO 点击登录按钮
+[2015-12-15 15:30:02] login2.py[line:33] INFO 点击登录按钮完毕
+[2015-12-15 15:30:05] login2.py[line:72] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:30:05] login2.py[line:56] INFO 检查是否登录成功.
+[2015-12-15 15:30:11] login2.py[line:62] INFO 登录失败
+[2015-12-15 15:30:11] login2.py[line:78] INFO 重新读取账号和密码登录。
+[2015-12-15 15:30:11] login2.py[line:24] INFO logon nhrusername:119937 password:111222
+[2015-12-15 15:30:11] login2.py[line:31] INFO 点击登录按钮
+[2015-12-15 15:30:11] login2.py[line:33] INFO 点击登录按钮完毕
+[2015-12-15 15:30:14] login2.py[line:72] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:30:14] login2.py[line:56] INFO 检查是否登录成功.
+[2015-12-15 15:30:19] login2.py[line:62] INFO 登录失败
+[2015-12-15 15:30:19] login2.py[line:78] INFO 重新读取账号和密码登录。
+[2015-12-15 15:30:19] login2.py[line:24] INFO logon nhrusername:116460 password:222222
+[2015-12-15 15:30:20] login2.py[line:31] INFO 点击登录按钮
+[2015-12-15 15:30:20] login2.py[line:33] INFO 点击登录按钮完毕
+[2015-12-15 15:30:23] login2.py[line:72] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:30:23] login2.py[line:56] INFO 检查是否登录成功.
+[2015-12-15 15:30:28] login2.py[line:62] INFO 登录失败
+[2015-12-15 15:30:28] login2.py[line:78] INFO 重新读取账号和密码登录。
+[2015-12-15 15:30:28] login2.py[line:24] INFO logon nhrusername:231432 password:qqqqqq
+[2015-12-15 15:30:28] login2.py[line:31] INFO 点击登录按钮
+[2015-12-15 15:30:33] login2.py[line:33] INFO 点击登录按钮完毕
+[2015-12-15 15:30:36] login2.py[line:72] INFO 调用EelementExits函数，校验NHR是否登录成功
+[2015-12-15 15:30:36] login2.py[line:56] INFO 检查是否登录成功.
+[2015-12-15 15:30:36] login2.py[line:59] INFO 登录成功.
+[2015-12-15 15:30:36] login2.py[line:75] INFO 登录成功，进入NHR欢迎界面
+[2015-12-15 15:30:38] login2.py[line:39] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-15 15:30:44] login2.py[line:46] INFO 打开认证管理界面

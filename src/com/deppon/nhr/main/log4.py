@@ -22,20 +22,20 @@ class Logger():
         self.logger.addHandler(sh)
         self.logger.addHandler(fh)
         
-    def debug(self,msg):
-        self.logger.debug(msg)
-     
-    def info(self,msg):
-        self.logger.info(msg)
-         
-    def warn(self,msg):
-        self.logger.warn(msg)
-         
-    def error(self,msg):
-        self.logger.error(msg)
-         
-    def critical(self,msg):
-        self.logger.critical(msg)
+#     def debug(self,msg):
+#         self.logger.debug(msg)
+#      
+#     def info(self,msg):
+#         self.logger.info(msg)
+#          
+#     def warn(self,msg):
+#         self.logger.warn(msg)
+#          
+#     def error(self,msg):
+#         self.logger.error(msg)
+#          
+#     def critical(self,msg):
+#         self.logger.critical(msg)
     
     def get_log(self):
         return self.logger
