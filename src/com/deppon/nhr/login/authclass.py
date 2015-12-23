@@ -13,7 +13,7 @@ from time import sleep,strftime
 import random,csv,os
 from com.deppon.nhr.globalvar import globalvar
 from com.deppon.nhr import log
-from com.deppon.nhr.publib.datdict import dat
+from com.deppon.nhr.publib.datdict import *
 
 def identification(driver,li,le):
     '''新增开班，选择认证大类和层级 '''
@@ -135,7 +135,7 @@ if __name__=="__main__":
     driver=auth.driver
     try:
         count=0
-        for li in range(2):
+        for li in range(13):
             for le in range(4):
                 log.info("创建新开班的认证和层级："+dat(li,le))
                 newclass(driver,li,le)
@@ -146,7 +146,6 @@ if __name__=="__main__":
                 count+=1
                 log.info("已经累计新增班级：%d"%(count))
     except Exception as e:
-        log.error("执行发生异常,退出执行。异常信息："+e)
         driver.quit()
     finally:  
         pass

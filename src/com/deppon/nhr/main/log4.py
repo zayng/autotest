@@ -7,6 +7,7 @@ import logging
 import os
 
 class Logger():
+    "自定义日志类，用于记录自动化测试运行日志"
     def __init__(self,name=os.path.join(os.path.abspath('../log'),'log.txt'),clevel=logging.DEBUG,flevel=logging.DEBUG):
         self.logger=logging.getLogger('main')
         self.logger.setLevel(logging.DEBUG)
@@ -22,20 +23,20 @@ class Logger():
         self.logger.addHandler(sh)
         self.logger.addHandler(fh)
         
-#     def debug(self,msg):
-#         self.logger.debug(msg)
-#      
-#     def info(self,msg):
-#         self.logger.info(msg)
-#          
-#     def warn(self,msg):
-#         self.logger.warn(msg)
-#          
-#     def error(self,msg):
-#         self.logger.error(msg)
-#          
-#     def critical(self,msg):
-#         self.logger.critical(msg)
+    def debug(self,msg):
+        self.logger.debug(msg)
+      
+    def info(self,msg):
+        self.logger.info(msg)
+          
+    def warn(self,msg):
+        self.logger.warn(msg)
+          
+    def error(self,msg):
+        self.logger.error(msg)
+          
+    def critical(self,msg):
+        self.logger.critical(msg)
     
     def get_log(self):
         return self.logger

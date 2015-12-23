@@ -26,14 +26,10 @@ def queryclass(driver,li=1,le=1,*name):
     clname.clear()
     clname.send_keys(name)
     sleep(1)
-    #点击认证大类选择框
-    #clakind=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']/descendant::td[label[text()='认证大类:']]/following-sibling::td//td[2]")
-    #clakind.click()
     driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']").click()
     #选择认证大类
     classli=driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s]"%li).pop()
     classli.click()
-    
     #选择认证层级下拉框
     driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classlevel']").click()
     #选择认证层级
@@ -43,7 +39,6 @@ def queryclass(driver,li=1,le=1,*name):
     #点击查询
     query=driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//button[span[text()='查询']]")
     query.click()
-    
     
 def selectcla(driver,se=1,*name):
     '''选择显示列表中的班级'''

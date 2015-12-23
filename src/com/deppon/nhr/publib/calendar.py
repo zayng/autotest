@@ -15,7 +15,6 @@ def calendar(driver,*dptime,**dpdate):
 #    year,month,day=(2015,11,5)
     # 切换到日期控件
     log.info("切换到日历控件选择日期")
-    
     frabegin=driver.find_element_by_xpath(u"//*[@width='97' and @height='9']")
     driver.switch_to_frame(frabegin)
     # driver.switch_to_frame(0)
@@ -29,8 +28,6 @@ def calendar(driver,*dptime,**dpdate):
         year,month,day=(2015,11,5)
         sDate=driver.find_element_by_xpath(u"//td[@onclick='day_Click(%s,%s,%s);']" % (year,month,day))
         sDate.click()
- 
-    # ActionChains(driver).double_click(seTime).perform()
     # 选择时间
     log.info("选择时间")
     if len(dptime)>0:      
@@ -43,7 +40,6 @@ def calendar(driver,*dptime,**dpdate):
         ss=driver.find_element_by_xpath("//span[@id='dpTimeStr']/following-sibling::input[last()]")
         ActionChains(driver).double_click(ss).perform()
         ss.send_keys(dptime[2])
-       
     # 点击确定
     if dpdate['fg']:
         driver.find_element_by_id("dpOkInput").click()
