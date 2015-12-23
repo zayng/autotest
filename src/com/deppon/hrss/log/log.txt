@@ -1,0 +1,17 @@
+[2015-12-23 16:39:05] login.py[line:10] INFO 。。。。。。初始化设置。。。。。
+[2015-12-23 16:39:17] login.py[line:17] INFO 启动FireFox浏览器，打开url.
+[2015-12-23 16:39:58] login.py[line:10] INFO 。。。。。。初始化设置。。。。。
+[2015-12-23 16:40:04] login.py[line:17] INFO 启动FireFox浏览器，打开url.
+[2015-12-23 16:40:04] login.py[line:19] INFO 使用账号登陆NHR系统
+[2015-12-23 16:40:04] login.py[line:20] INFO 登陆账号:231432
+[2015-12-23 16:40:04] login.py[line:21] INFO 登陆密码:qqqqqq
+[2015-12-23 16:40:10] login.py[line:27] INFO 选择菜单节点
+[2015-12-23 16:43:36] NHR_CASE001.py[line:15] INFO 开始执行测试用例
+[2015-12-23 16:43:36] login.py[line:10] INFO 。。。。。。初始化设置。。。。。
+[2015-12-23 16:43:46] login.py[line:17] INFO 启动FireFox浏览器，打开url.
+[2015-12-23 16:43:47] login.py[line:19] INFO 使用账号登陆NHR系统
+[2015-12-23 16:43:47] login.py[line:20] INFO 登陆账号:231432
+[2015-12-23 16:43:47] login.py[line:21] INFO 登陆密码:qqqqqq
+[2015-12-23 16:43:54] login.py[line:27] INFO 选择菜单节点
+[2015-12-23 16:44:06] NHR_CASE001.py[line:22] INFO NHR菜单节点成功
+[2015-12-23 16:44:06] NHR_CASE001.py[line:28] INFO 测试用例执行完毕
