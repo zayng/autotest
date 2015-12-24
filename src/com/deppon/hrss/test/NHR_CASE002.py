@@ -9,7 +9,7 @@ from com.deppon.hrss import *
         
 
         
-class Test001(unittest.TestCase):
+class Test002(unittest.TestCase):
     
     def setUp(self):
         log.info("开始执行测试用例")

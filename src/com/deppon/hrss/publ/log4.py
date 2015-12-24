@@ -56,6 +56,7 @@ def Logger1(name=os.path.join(os.path.abspath('../log'),'log1.txt'),clevel=loggi
     logger.addHandler(sh)
     logger.addHandler(fh)
     return logger
+
 log=Logger().get_log()
                   
 if __name__=='__main__':

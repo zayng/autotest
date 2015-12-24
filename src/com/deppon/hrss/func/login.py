@@ -36,6 +36,7 @@ def menu(self,s=2):
     t4=driver.find_element_by_xpath(u"//div[text()='认证开班管理']").click()
     sleep(s+1)
 if __name__=='__main__':
-    s=startup(startup)
-    login(startup)
-    menu(startup)
+    self=startup
+    startup(self)
+    login(self)
+    menu(self)

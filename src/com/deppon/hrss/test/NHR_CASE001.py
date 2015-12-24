@@ -7,9 +7,8 @@ from selenium.webdriver.common.keys import Keys
 
 from com.deppon.hrss import *
         
-
-        
-class Test002(unittest.TestCase):
+               
+class Test001(unittest.TestCase):
     
     def setUp(self):
         log.info("开始执行测试用例")
