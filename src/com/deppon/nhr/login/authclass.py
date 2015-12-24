@@ -137,7 +137,7 @@ if __name__=="__main__":
         count=0
         for li in range(13):
             for le in range(4):
-                log.info("创建新开班的认证和层级："+dat(li,le))
+                log.info("创建新开班的认证和层级：")
                 newclass(driver,li,le)
                 g=globalvar()
                 name=g.get_name()

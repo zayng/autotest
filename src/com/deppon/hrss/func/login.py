@@ -8,9 +8,11 @@ from com.deppon.hrss import log
   
 def startup(self):
     log.info("。。。。。。初始化设置。。。。。")
+    global driver
     self.driver=webdriver.Firefox()
     self.driver.implicitly_wait(30)
     self.driver.maximize_window()
+    driver=self.driver
     self.url="http://192.168.68.125:8080/nhr/login/index.action"
 
 def login(self,user="231432",password="qqqqqq"):
@@ -25,15 +27,14 @@ def login(self,user="231432",password="qqqqqq"):
 
 def menu(self,s=2):
     log.info("选择菜单节点")
-    driver=self.driver
     sleep(s)
-    t1=driver.find_element_by_xpath(u"//div[text()='HR单据申请']").click()
+    self.driver.find_element_by_xpath(u"//div[text()='HR单据申请']").click()
     sleep(s)
-    t2=driver.find_element_by_xpath(u"//div[text()='储备认证管理']").click()
+    self.driver.find_element_by_xpath(u"//div[text()='储备认证管理']").click()
     sleep(s)
-    t3=driver.find_element_by_xpath(u"//div[text()='认证']").click()
+    self.driver.find_element_by_xpath(u"//div[text()='认证']").click()
     sleep(s)
-    t4=driver.find_element_by_xpath(u"//div[text()='认证开班管理']").click()
+    self.driver.find_element_by_xpath(u"//div[text()='认证开班管理']").click()
     sleep(s+1)
 if __name__=='__main__':
     self=startup
