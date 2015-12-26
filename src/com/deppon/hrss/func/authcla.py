@@ -39,7 +39,7 @@ def newclass(self,li=2,le=1):
     address.send_keys(addr)
     #选择认证类型与认证层级
     log.info("选择认证类型和认证层级，开始调用identification函数")
-    categories(driver,li,le)
+    categor(driver,li,le)
     log.info("选择班级开始时间和结束时间")
     #选择开始时间
     newBegin=driver.find_element_by_xpath(u"//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]")
@@ -67,8 +67,11 @@ def newclass(self,li=2,le=1):
     element.click()
     
     lis=[fno,name,li,le,sydate]
+    
+    log.info("保存新增班级信息到列表")
     globalvar(*lis)
-    log.info("新增班级信息:"+lis)
+    
+    print(globalvar())
 
     if msg:
         log.info("保存新增班级到dat文件")
