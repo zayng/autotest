@@ -2,7 +2,7 @@
 from com.deppon.hrss import log
 from selenium import webdriver
 
-def categories(driver,li,le):
+def categor(driver,li,le):
     '''新增开班，选择认证大类和层级 '''
     log.info("call success!!!")
     log.info("选择认证大类")
