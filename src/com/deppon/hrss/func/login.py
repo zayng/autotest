@@ -15,7 +15,7 @@ def startup(self):
     driver=self.driver
     self.url="http://192.168.68.125:8080/nhr/login/index.action"
 
-def login(self,user="231432",password="qqqqqq"):
+def login(self, user="231432", password="qqqqqq"):
     log.info("启动FireFox浏览器，打开url.")
     self.driver.get(self.url)
     log.info("使用账号登陆NHR系统")
@@ -25,7 +25,7 @@ def login(self,user="231432",password="qqqqqq"):
     self.driver.find_element_by_id("password").send_keys(password)
     self.driver.find_element_by_class_name("a_login").click()
 
-def menu(self,s=2):
+def menu(self, s=2):
     log.info("选择菜单节点")
     sleep(s)
     self.driver.find_element_by_xpath(u"//div[text()='HR单据申请']").click()
@@ -35,9 +35,9 @@ def menu(self,s=2):
     self.driver.find_element_by_xpath(u"//div[text()='认证']").click()
     sleep(s)
     self.driver.find_element_by_xpath(u"//div[text()='认证开班管理']").click()
-    sleep(s+1)
-if __name__=='__main__':
-    self=startup
+    sleep(s + 1)
+if __name__ == '__main__':
+    self = startup
     startup(self)
     login(self)
     menu(self)

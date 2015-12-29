@@ -2648,3 +2648,13 @@ Stacktrace:
 [2015-12-24 15:27:04] authclass.py[line:124] INFO 保存新增班级到CSV文件
 [2015-12-24 15:27:04] authclass.py[line:145] INFO 保存班级信息到列表:{'ts': '2015-12-24 15:27:00', 'le': 0, 'name': '2015年第7828期认证开班', 'li': 0, 'id': 7828}
 [2015-12-24 15:27:04] authclass.py[line:147] INFO 已经累计新增班级：1
+[2015-12-26 12:35:29] login.py[line:18] INFO 开始测试......
+[2015-12-26 12:35:29] login.py[line:19] INFO 进行测试初始化工作
+[2015-12-26 12:35:48] login.py[line:24] INFO 初始化工作完毕
+[2015-12-26 12:35:48] login.py[line:27] DEBUG 打开系统链接:http://192.168.68.125:8080/nhr/login/index.action
+[2015-12-26 12:35:51] login.py[line:29] DEBUG 使用测试工号：231432
+[2015-12-26 12:35:51] login.py[line:30] DEBUG 测试密码：qqqqqq
+[2015-12-26 12:35:59] login.py[line:34] INFO NHR login success!!!
+[2015-12-26 12:36:01] login.py[line:39] INFO 选择NHR菜单，HR单据申请-储备认证管理-认证-认证开班管理
+[2015-12-26 12:36:12] login.py[line:48] INFO 进入认证管理
+[2015-12-26 12:36:12] login.py[line:51] INFO 测试完成，退出浏览器。

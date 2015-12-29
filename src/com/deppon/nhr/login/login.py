@@ -10,6 +10,8 @@ from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 from com.deppon.nhr import log
 
+
+
 class nhrLogin():
     '初始化设置，实现NHR登陆，菜单选择'
     def __init__(self):
