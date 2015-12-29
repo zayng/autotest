@@ -15,7 +15,7 @@ from datetime import datetime
 from .publ.log4 import Logger
 from .publ.log4 import log
 from .func.login import startup,menu,login
-from .publ.categor import categor
+from .hrss.publ.categor import categor
 from .publ.cladat import cladata
 from .publ.calendar import calendar
 from .globalvar import globalvar
