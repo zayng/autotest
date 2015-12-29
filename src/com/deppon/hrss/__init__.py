@@ -14,7 +14,7 @@ from datetime import datetime
  
 from .publ.log4 import Logger
 from .publ.log4 import log
-from .func.login import startup,menu,login
+from .func.login import startup, menu, login
 from .publ import categor
 from .publ import cladat
 from .publ import calendar
