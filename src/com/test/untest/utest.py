@@ -26,7 +26,12 @@ class MyTestCase(unittest.TestCase):
     def test_prame10(self):
         self.assertTrue(is_prime(10), msg="It's not Prime numbers")
         print("Prime numbers3")
-
+    def test_prame11(self):
+        self.assertTrue(is_prime(11), msg="It's not Prime numbers")
+        print("Prime numbers3")
+    def test_prame12(self):
+        self.assertTrue(is_prime(12), msg="It's not Prime numbers")
+        print("Prime numbers3")
     def tearDown(self):
         print("test end.")
 
