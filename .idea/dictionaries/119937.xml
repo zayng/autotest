@@ -2,11 +2,15 @@
   <dictionary name="119937">
     <words>
       <w>authinfo</w>
+      <w>authlist</w>
+      <w>clalis</w>
       <w>classbegintime</w>
+      <w>classdat</w>
       <w>classna</w>
       <w>messagebox</w>
       <w>newclass</w>
       <w>saclass</w>
+      <w>selectcla</w>
       <w>sydate</w>
     </words>
   </dictionary>

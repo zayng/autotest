@@ -8,34 +8,42 @@ Created on 2015年11月9日
 from time import sleep
 import os
 
+from com.deppon.hrss import log
+
 
 def readdat():
     filedat = os.path.abspath(r'..\temp\class-name.dat')
     with open(filedat) as file:
-        readlins = [line.strip().split('#') for line in file.readlines()]
-    return readlins
+        readlines = [line.strip().split('#') for line in file.readlines()]
+    return readlines
 
 
-def queryclass(driver, li=1, le=1, *name):
+def queryclass(self, **name):
     """
     查询班级列表
     li:认证大类
     le:认证层级
     name:班级名称
     """
+    driver = self.driver
+    log.info("开始查询询班级")
+    for key, value in name.items():
+        print(key, "==>", value)
+
     # 输入班级名称
+    sleep(5)
     clname = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classname']")
     clname.clear()
-    clname.send_keys(name)
+    clname.send_keys(name['name'])
     sleep(1)
     driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']").click()
     # 选择认证大类
-    classli = driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s]" % li).pop()
+    classli = driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s+1]" % name['li']).pop()
     classli.click()
     # 选择认证层级下拉框
     driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classlevel']").click()
     # 选择认证层级
-    classle = driver.find_elements_by_xpath("//ul[count(li)=4]/li[%s]" % le).pop()
+    classle = driver.find_elements_by_xpath("//ul[count(li)=4]/li[%s+1]" % name['le']).pop()
     classle.click()
     sleep(1)
     # 点击查询
@@ -43,13 +51,15 @@ def queryclass(driver, li=1, le=1, *name):
     query.click()
 
 
-def selectcla(driver, se=1, *name):
+def selectcla(self, se=1, *name):
     """选择显示列表中的班级
     :param driver:
     :param se:
     :param name:
     :return:
     """
+
+    driver = self.driver
     sleep(3)
     authlist = driver.find_elements_by_xpath("//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]")
     if len(authlist) == 1:

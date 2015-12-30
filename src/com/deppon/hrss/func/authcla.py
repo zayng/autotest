@@ -28,7 +28,7 @@ def newclass(self, li=2, le=1):
     newclass_btn.click()
     # 输入开班名称
     log.info("使用随机函数random.randint,生成班级名称和地点")
-    name = u"2015年第%r期认证开班" % (fno)
+    name = u"2015年第%r期认证开班" % fno
     log.info("班级名称生成成功，生成班级名称：" + name)
     classna = driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
     classna.send_keys(name)
@@ -51,7 +51,7 @@ def newclass(self, li=2, le=1):
     newed = driver.find_element_by_xpath(u"//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]")
     newed.click()
     # 调用时间控件选择结束时间
-    calendar.calendar(driver, 23, 30, 20, yy=2015, mm=12, dd=30, fg=1)
+    calendar.calendar(driver, 23, 30, 20, yy=2016, mm=1, dd=9, fg=1)
     log.info("开始保存新增班级.....")
     # 保存新开班级
     saclass = driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")
@@ -68,13 +68,15 @@ def newclass(self, li=2, le=1):
     element.click()
 
     lis = [fno, name, li, le, sydate]
-    log.info("保存新增班级信息到列表")
-    globalvar(*lis)
+    log.info("保存新增信息到globalvar列表")
+    gl = globalvar()
+    gl.set_name(fno, name, li, le, sydate)
+
     if msg:
         log.info("保存新增班级到dat文件")
         filepath = os.path.abspath(r"../temp/class-name.dat")
         with open(filepath, 'a') as filename:
-            filename.writelines("%s#%s#%s#%s\n" % (name, li, le, sydate))
+            filename.writelines("%s#%s#%s#'%s'\n" % (name, li, le, sydate))
             log.info("保存数据成功")
 
 
