@@ -11,8 +11,8 @@ class TestCount():
     def test_add(self):
         try:
             j = count(2, 4)
-            add = j.add()
-            assert (add == 5), 'Inter addtion result error'
+            add = j.add
+            assert (add == 5), "Inter addtion result error"
         except AssertionError as msg:
             print(msg)
         else:
