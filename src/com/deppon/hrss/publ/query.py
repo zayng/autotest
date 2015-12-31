@@ -72,7 +72,7 @@ def queryjudges(driver, *empcode):
     """
     查询评委工号
     """
-    log.info("开始添加测评任务评委")
+    log.info("开始添加任务评委")
     # 清空收件人
     clearcode = driver.find_elements_by_xpath("//button[span[text()='清空收件人']]")
     clearcode.pop().click()
