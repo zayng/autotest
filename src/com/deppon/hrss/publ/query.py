@@ -30,12 +30,13 @@ def queryclass(self, **name):
     for key, value in name.items():
         print(key, "==>", value)
 
-    # 输入班级名称
-    sleep(5)
-    clname = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classname']")
-    clname.clear()
-    clname.send_keys(name['name'])
-    sleep(1)
+    if 'name' in name.keys():
+        # 输入班级名称
+        sleep(3)
+        clname = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='classname']")
+        clname.clear()
+        clname.send_keys(name['name'])
+    sleep(3)
     driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']").click()
     # 选择认证大类
     classli = driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s+1]" % name['li']).pop()
@@ -51,7 +52,7 @@ def queryclass(self, **name):
     query.click()
 
 
-def selectcla(self, se=1, *name):
+def selectcla(self, se=0, *name):
     """选择显示列表中的班级
     :param driver:
     :param se:
@@ -68,7 +69,10 @@ def selectcla(self, se=1, *name):
 
 
 def queryjudges(driver, *empcode):
-    """查询评委工号"""
+    """
+    查询评委工号
+    """
+    log.info("开始添加测评任务评委")
     # 清空收件人
     clearcode = driver.find_elements_by_xpath("//button[span[text()='清空收件人']]")
     clearcode.pop().click()
@@ -101,7 +105,7 @@ def queryjudges(driver, *empcode):
         confirmstr = u"//div[em[button[span[text()='清空收件人']]]]/preceding-sibling::div//button[span[text()='确定']]"
         confirm = driver.find_elements_by_xpath(confirmstr)
         confirm.pop().click()
-
+    log.info("评委添加成功")
     # 点击关闭按钮
     close = driver.find_elements_by_xpath("//button[span[text()='关闭']]")
     print(u"关闭按钮的元素个数:%s" % len(close))

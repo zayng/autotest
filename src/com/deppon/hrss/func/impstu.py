@@ -9,10 +9,10 @@ import os
 
 from com.deppon.hrss.publ.log4 import log
 
-from com.deppon.hrss.func.login import startup, login, menu
 from com.deppon.hrss.func.authcla import newclass
 from com.deppon.hrss.globalvar import globalvar
 from com.deppon.hrss.publ.query import queryclass, selectcla
+from com.deppon.hrss.func.login import startup, login, menu
 
 def notice(self, stufile="../temp/stuAuthImport.xlsx"):
     """导入学员
