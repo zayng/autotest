@@ -3,7 +3,7 @@ Created on 2015年11月2日
 
 @author: 119937
 """
-from time import sleep, strftime
+from time import sleep
 from datetime import datetime
 import random
 import os
@@ -12,8 +12,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 
-from com.deppon.hrss import *
+from com.deppon.hrss.publ.log4 import log
+from com.deppon.hrss.publ import calendar
+from com.deppon.hrss.publ import categor
+from com.deppon.hrss.globalvar import globalvar
 
+from com.deppon.hrss.func.login import startup, login, menu
 
 def newclass(self, li=2, le=1):
     """

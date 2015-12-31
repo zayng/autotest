@@ -8,7 +8,7 @@ Created on 2015年11月9日
 from time import sleep
 import os
 
-from com.deppon.hrss import log
+from com.deppon.hrss.publ.log4 import log
 
 
 def readdat():
@@ -58,7 +58,6 @@ def selectcla(self, se=1, *name):
     :param name:
     :return:
     """
-
     driver = self.driver
     sleep(3)
     authlist = driver.find_elements_by_xpath("//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]")
@@ -67,9 +66,6 @@ def selectcla(self, se=1, *name):
     else:
         authlist.pop(se).click()
 
-
-# cNam=driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//div[text()='%s']"%classname)
-#     cNam.click()    
 
 def queryjudges(driver, *empcode):
     """查询评委工号"""

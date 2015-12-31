@@ -1,13 +1,8 @@
-import unittest
-import os
+from time import sleep
 
 from selenium import webdriver
 
-from selenium.common.exceptions import NoSuchElementException
-
-from time import sleep
-
-from com.deppon.hrss import log
+from com.deppon.hrss.publ.log4 import log
 
 
 def startup(self):

@@ -1,6 +1,4 @@
-from com.deppon.hrss import log
-from selenium import webdriver
-
+from com.deppon.hrss.publ.log4 import log
 
 def categor(driver, li, le):
     """ 新增开班，选择认证大类和层级 """

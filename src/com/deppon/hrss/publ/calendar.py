@@ -4,9 +4,11 @@ Created on 2015年11月3日
 
 @author: 119937
 """
-from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
-from com.deppon.hrss import log
+
+from selenium.webdriver.common.action_chains import ActionChains
+
+from com.deppon.hrss.publ.log4 import log
 
 
 def calendar(driver, *dptime, **dpdate):

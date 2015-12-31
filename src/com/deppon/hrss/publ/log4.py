@@ -7,7 +7,7 @@ import logging
 import os
 
 
-class Logger():
+class Logger(object):
     """自定义日志类，用于记录自动化测试运行日志"""
 
     def __init__(self, name=os.path.join(os.path.abspath('../log'), 'log.txt'), clevel=logging.DEBUG,
@@ -46,7 +46,7 @@ class Logger():
         return self.logger
 
 
-def Logger1(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG, flevel=logging.DEBUG):
+def logger1(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG, flevel=logging.DEBUG):
     logger = logging.getLogger('brunch')
     logger.setLevel(logging.DEBUG)
     fmt = logging.Formatter('[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     log2.error("一个error信息")
     log2.critical("一个致命的criticl信息")
 
-    log1 = Logger1()
+    log1 = logger1()
     log1.debug("一个debug信息")
     log1.info("一个info信息")
     log1.warn("一个warning信息")
