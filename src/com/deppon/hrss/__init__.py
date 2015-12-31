@@ -19,4 +19,5 @@ from .publ import categor
 from .publ import cladat
 from .publ import calendar
 from .globalvar import globalvar
+from .func.authcla import newclass
 
