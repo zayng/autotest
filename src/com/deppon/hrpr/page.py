@@ -23,35 +23,35 @@ class Page(object):
         self.tabs = {}
 
     def _open(self, uri):
-        url = self.login_url + uri
-        self.driver.get(url)
+        self.all_url = self.base_url + uri
+        self.driver.get(self.all_url)
         self.driver.maximize_window()
-        assert self.on_page(), "Did not land on  %s " % url
+        assert self.on_page(), "Did not land on  %s " % self.all_url
 
     def find_element(self, *loc):
         return self.driver.find_element(*loc)
 
     def open(self):
-        self._open(self.url)
+        self._open(self.uri)
 
     def on_page(self):
-        return self.driver.current_url == (self.base_url + self.url)
+        return self.driver.current_url == self.all_url
 
     def script(self, scr):
         self.driver.execute_script(scr)
 
-#     def send_keys(self, loc, value, clear_first=True, click_first=True):
-#         try:
-#             loc = getattr(self, '_%s' % loc)
-#             if click_first:
-#                 self.driver.find_element(*loc).click()
-#             if clear_first:
-#                 self.driver.find_element(*loc).click()
-#             self.driver.find_element(*loc).send_keys(value)
-#         except AttributeError:
-#             print("%s page does not have '%s' locator" % (self, loc))
+    def send_keys(self, loc, value, clear_first=True, click_first=True):
+        try:
+            loc = getattr(self, '_%s' % loc)
+            if click_first:
+                self.driver.find_element(*loc).click()
+            if clear_first:
+                self.driver.find_element(*loc).click()
+            self.driver.find_element(*loc).send_keys(value)
+        except AttributeError:
+            print("%s page does not have '%s' locator" % (self, loc))
 
 if __name__ == '__main__':
     driver = webdriver.Firefox()
     login = Page(driver)
-    login._open('')
+    login.open()
