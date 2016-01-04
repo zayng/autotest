@@ -35,22 +35,23 @@ class Page(object):
         self._open(self.url)
 
     def on_page(self):
-        return self.driver.current_url == (self.base_url + self.uri)
+        return self.driver.current_url == (self.base_url + self.url)
 
     def script(self, scr):
         self.driver.execute_script(scr)
 
-    def send_keys(self, loc, value, clear_first=True, click_first=True):
-        try:
-            loc = getattr(self, '_%s' % loc)
-            if click_first:
-                self.driver.find_element(*loc).click()
-            if clear_first:
-                self.driver.find_element(*loc).click()
-            self.driver.find_element(*loc).send_keys(value)
-        except AttributeError:
-            print("%s page does not have '%s' locator" % (self, loc))
+#     def send_keys(self, loc, value, clear_first=True, click_first=True):
+#         try:
+#             loc = getattr(self, '_%s' % loc)
+#             if click_first:
+#                 self.driver.find_element(*loc).click()
+#             if clear_first:
+#                 self.driver.find_element(*loc).click()
+#             self.driver.find_element(*loc).send_keys(value)
+#         except AttributeError:
+#             print("%s page does not have '%s' locator" % (self, loc))
 
 if __name__ == '__main__':
-    login = Page()
+    driver = webdriver.Firefox()
+    login = Page(driver)
     login._open('')

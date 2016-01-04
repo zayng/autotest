@@ -1,6 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/com/baidu/login.py=utf-8
 encoding//src/com/baidu/yun/login.py=utf-8
+encoding//src/com/deppon/hrpr/LoginPage.py=utf-8
+encoding//src/com/deppon/hrpr/page.py=utf-8
+encoding//src/com/deppon/hrpr/test_user_login.py=utf-8
 encoding//src/com/deppon/hrss/func/authcla.py=utf-8
 encoding//src/com/deppon/hrss/func/impstu.py=utf-8
 encoding//src/com/deppon/hrss/impm.py=utf-8

@@ -14,7 +14,7 @@ class Login126(Page):
     """
     登录www.126.com页面
     """
-    uri = "/"
+    uri = " "
 
     #定位元素
     username = (By.ID, 'idInput')
@@ -22,6 +22,7 @@ class Login126(Page):
     loginbtn = (By.ID, 'loginBtn')
 
     #action
+
     def open(self):
         self._open(self.uri)
 
