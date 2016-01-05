@@ -20,21 +20,21 @@ class Login126(Page):
     # 定位元素
     username_loc = (By.ID, 'idInput')
     password_loc = (By.ID, 'pwdInput')
-    loginbtn_loc = (By.ID, 'loginBtn'))
+    loginbtn_loc = (By.ID, 'loginBtn')
 
     # action
 
     def open(self):
         self._open(self.uri)
 
-    # def type_user(self, user):
-    #     self.find_element(*self.username_loc).send_keys(user)
-    #
-    # def type_pwd(self, pwd):
-    #     self.find_element(*self.password_loc).send_keys(pwd)
-    #
-    # def submit(self):
-    #     self.find_element(*self.loginbtn_loc).click()
+    def type_user(self, user):
+        self.find_element(*self.username_loc).send_keys(user)
+
+    def type_pwd(self, pwd):
+        self.find_element(*self.password_loc).send_keys(pwd)
+
+    def submit(self):
+        self.find_element(*self.loginbtn_loc).click()
 
 
 if __name__ == 'main__':
