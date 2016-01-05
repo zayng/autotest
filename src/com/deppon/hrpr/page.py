@@ -54,4 +54,5 @@ class Page(object):
 if __name__ == '__main__':
     driver = webdriver.Firefox()
     login = Page(driver)
+    login.uri = '/'
     login.open()
