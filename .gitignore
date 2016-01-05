@@ -1,5 +1,5 @@
 .pydevproject
 .project
 .idea/
-.setting
+.settings/
 src/com/deppon/hrss/log/log.txt
