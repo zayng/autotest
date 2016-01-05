@@ -20,7 +20,7 @@ class Login126(Page):
     # 定位元素
     username_loc = (By.ID, 'idInput')
     password_loc = (By.ID, 'pwdInput')
-    loginbtn_loc = (By.ID, 'loginBtn'))
+    loginbtn_loc = (By.ID, 'loginBtn')
 
     # action
 
