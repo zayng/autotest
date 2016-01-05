@@ -20,7 +20,7 @@ class Login126(Page):
     # 定位元素
     username_loc = (By.ID, 'idInput')
     password_loc = (By.ID, 'pwdInput')
-    loginbtn_loc = (By.ID, 'loginBtn')
+    loginbtn_loc = (By.ID, 'loginBtn'))
 
     # action
 
@@ -38,9 +38,9 @@ class Login126(Page):
 
 
 if __name__ == 'main__':
-#    driver = webdriver.Firefox()
-    lin = Login126()
-#    lin.open()
-    # login.type_user("suesce@126.com")
-    # login.type_pwd("112200")
-    # login.submit()
+    driver = webdriver.Firefox()
+    login = Login126(driver)
+    login.open()
+    login.type_user("suesce@126.com")
+    login.type_pwd("112200")
+    login.submit()

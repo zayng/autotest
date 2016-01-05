@@ -7,15 +7,17 @@ Created on '2016/1/4'
 from com.deppon.hrpr.test_user_login import test_user_login
 from selenium import webdriver
 
+
 def main():
     try:
-        #selenium
+        # selenium
         driver = webdriver.Firefox()
         username = 'suesce@126.com'
         password = '112200'
         test_user_login(driver, username, password)
     finally:
         driver.close()
+
 
 if __name__ == '__mian__':
     main()
