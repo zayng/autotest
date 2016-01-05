@@ -4,9 +4,11 @@ Created on '2016/1/4'
 
 @author: '119937'
 """
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
+
+
+# from selenium import webdriver
+# from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.by import By
 
 class Page(object):
     """
@@ -51,8 +53,8 @@ class Page(object):
         except AttributeError:
             print("%s page does not have '%s' locator" % (self, loc))
 
-if __name__ == '__main__':
-    driver = webdriver.Firefox()
-    login = Page(driver)
-    login.uri = '/'
-    login.open()
+# if __name__ == '__main__':
+#     driver = webdriver.Firefox()
+#     login = Page(driver)
+#     login.uri = '/'
+#     login.open()

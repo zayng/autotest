@@ -37,10 +37,9 @@ class Login126(Page):
         self.find_element(*self.loginbtn_loc).click()
 
 
-if __name__ == 'main__':
-    driver = webdriver.Firefox()
-    login = Login126(driver)
+if __name__ == '__main__':
+    login = Login126(webdriver.Firefox())
     login.open()
-    login.type_user("suesce@126.com")
+    login.type_user("suesce")
     login.type_pwd("112200")
     login.submit()
