@@ -1,0 +1,7 @@
+*.pyc
+*/__pycache__/
+.pydevproject
+.project
+.idea/
+.settings/
+src/com/deppon/hrss/log/log.txt
