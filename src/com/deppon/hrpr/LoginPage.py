@@ -10,18 +10,19 @@ from selenium.webdriver.common.by import By
 
 from com.deppon.hrpr.page import Page
 
+
 class Login126(Page):
     """
     登录www.126.com页面
     """
     uri = " "
 
-    #定位元素
+    # 定位元素
     username = (By.ID, 'idInput')
     password = (By.ID, 'pwdInput')
     loginbtn = (By.ID, 'loginBtn')
 
-    #action
+    # action
 
     def open(self):
         self._open(self.uri)
@@ -34,6 +35,7 @@ class Login126(Page):
 
     def submit(self):
         self.find_element(*self.loginbtn).click()
+
 
 if __name__ == 'main__':
     driver = webdriver.Firefox()
