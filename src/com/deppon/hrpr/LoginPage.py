@@ -28,10 +28,12 @@ class Login126(Page):
         self._open(self.uri)
 
     def type_user(self, user):
-        self.find_element(*self.username_loc).send_keys(user)
+        self.send_keys(self.username_loc, user)
+        # self.find_element(*self.username_loc).send_keys(user)
 
     def type_pwd(self, pwd):
-        self.find_element(*self.password_loc).send_keys(pwd)
+        self.send_keys(self.password_loc, pwd)
+        # self.find_element(*self.password_loc).send_keys(pwd)
 
     def submit(self):
         self.find_element(*self.loginbtn_loc).click()
