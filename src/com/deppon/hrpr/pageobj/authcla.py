@@ -25,13 +25,13 @@ class AddClass(Page):
         """
         driver = self.driver
         # 点击新开班按钮
-        cla_btn = driver.find_element_by_xpath(u"//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
+        cla_btn = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
         cla_btn.click()
         # 输入新开班级名称
-        classna = driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
+        classna = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
         classna.send_keys(self.randname())
         # 输入新开班级地点
-        address = driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='address']")
+        address = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='address']")
         address.send_keys(self.randname(False))
 
     def down_level(self):
