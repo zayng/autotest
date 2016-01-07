@@ -1,27 +1,9 @@
 #-*- coding:utf-8 -*-
-'''
+"""
 Created on 2015年11月3日
 
 @author: 119937
-'''
-import time
-import datetime
-import os 
-classinfo={}
-ts1=time.strftime('%y-%m-%d %H:%M:%S',time.localtime(time.time()))
-print(ts1)
-
-ts=datetime.datetime.today()
-classinfo['ts']=ts
-print(classinfo)
-
-ts2=time.strftime('%y-%m-%d %H:%M:%S')
-print(ts2)
-
-print(os.path.abspath('..\\bin'))
-
-cm=os.path.abspath('..\\bin')
-print(cm)
+"""
 
 # import random
 # import shelve

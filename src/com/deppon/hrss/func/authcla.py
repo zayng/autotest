@@ -44,18 +44,18 @@ def newclass(self, li=2, le=1):
     address.send_keys(adder)
     # 选择认证类型与认证层级
     log.info("选择认证类型和认证层级，开始调用identification函数")
-    categor(driver, li, le)
+    categor.categor(driver, li, le)
     log.info("选择班级开始时间和结束时间")
     # 选择开始时间
     newbie = driver.find_element_by_xpath(u"//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]")
     newbie.click()
     # 调用时间控件选择开始时间
-    calendar(driver, fg=0)
+    calendar.calendar(driver, fg=0)
     # 选择结束时间
     newed = driver.find_element_by_xpath(u"//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]")
     newed.click()
     # 调用时间控件选择结束时间
-    calendar(driver, 23, 30, 20, yy=2016, mm=1, dd=9, fg=1)
+    calendar.calendar(driver, 23, 30, 20, yy=2016, mm=1, dd=9, fg=1)
     log.info("开始保存新增班级.....")
     # 保存新开班级
     saclass = driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")

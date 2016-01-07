@@ -5,7 +5,8 @@ Created on '2016/1/4'
 @author: '119937'
 """
 from time import sleep
-from com.deppon.hrpr.loginpage import Login126
+
+from com.deppon.hrpr.pageobj.login import Login126
 
 
 def test_user_login(driver, username, password):

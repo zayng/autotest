@@ -80,6 +80,6 @@ if __name__ == '__main__':
     startup(self)
     login(self)
     menu(self)
-    queryclass(self, li=2, le=1)
+    queryclass(self, li=3, le=1)
     selectcla(self)
     task(self)
