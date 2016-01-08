@@ -4,6 +4,7 @@ Created on '2016/1/4'
 
 @author: '119937'
 """
+import time
 
 from selenium import webdriver
 
@@ -22,6 +23,7 @@ class Page(object):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.log = Logger().get_log()
+        self.sleep = time.sleep
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")

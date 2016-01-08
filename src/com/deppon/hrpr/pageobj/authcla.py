@@ -13,6 +13,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 
 from com.deppon.hrpr.pageobj.page import Page
+from com.deppon.hrpr.pageobj.dateobj import DateObj
+
 
 class AddClass(Page):
     """
@@ -66,11 +68,11 @@ class AddClass(Page):
 
     def choose_time(self):
         driver = self.driver
-        # 选择开始时间
-        begin_time = driver.find_element_by_xpath(u"//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]")
-        newbie.click()
+        begin_time = "//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]"
+        driver.find_element_by_xpath(begin_time).click()
+
         # 调用时间控件选择开始时间
-        calendar(driver, fg=0)
+        DateObj.calendar(driver, fg=0)
         # 选择结束时间
         newed = driver.find_element_by_xpath(u"//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]")
         newed.click()
