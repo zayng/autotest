@@ -16,10 +16,10 @@ class Page(object):
     页面类基类，用于所有页面的继承。
     """
 
-    base_url = 'http://192.168.20.116:8080/nhr/login/index.action'
+    login_url = 'http://192.168.20.116:8080/nhr/login/index.action'
 
-    def __init__(self, base_url):
-        self.url = base_url
+    def __init__(self, base_url=login_url):
+        self.base_url = base_url
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
         self.log = Logger().get_log()
@@ -27,7 +27,7 @@ class Page(object):
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")
-        self.driver.get(self.url)
+        self.driver.get(self.base_url)
         self.driver.maximize_window()
 
     def find_element(self, *loc):
