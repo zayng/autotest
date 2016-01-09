@@ -8,7 +8,7 @@ from time import sleep
 
 from selenium import webdriver
 
-from com.deppon.hrpr.pageobj.page import Page
+from com.deppon.hrpr.page.page import Page
 
 
 class Login126(Page):

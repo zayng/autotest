@@ -5,7 +5,7 @@ Created on 2015年11月3日
 @author: 119937
 """
 from selenium.webdriver.common.action_chains import ActionChains
-from com.deppon.hrpr.pageobj.authcla import Page
+from com.deppon.hrpr.page.authcla import Page
 
 
 class DateObj(Page):

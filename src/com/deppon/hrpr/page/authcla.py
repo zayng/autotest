@@ -12,8 +12,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 
-from com.deppon.hrpr.pageobj.page import Page
-from com.deppon.hrpr.pageobj.dateobj import DateObj
+from com.deppon.hrpr.page.page import Page
+from com.deppon.hrpr.page.dateobj import DateObj
 
 
 class AddClass(Page):
