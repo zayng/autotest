@@ -22,8 +22,6 @@ class Page(object):
         self.base_url = base_url
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.log = Logger().get_log()
-        self.sleep = time.sleep
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")
@@ -53,6 +51,14 @@ class Page(object):
 
     def script(self, scr):
         self.driver.execute_script(scr)
+
+    @staticmethod
+    def sleep(ss=2):
+        return time.sleep(ss)
+
+    @staticmethod
+    def log():
+        return Logger().get_log()
 
 # if __name__ == '__main__':
 #     driver = webdriver.Firefox()

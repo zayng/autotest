@@ -22,12 +22,12 @@ class Login126(Page):
         self.driver.find_element_by_id("password").send_keys(password)
         self.driver.find_element_by_class_name("a_login").click()
 
-    def nav_menu(self, s=2):
+    def nav_menu(self):
         self.log.info("开始打开NHR菜单节点：HR单据申请-储备认证管理-认证管理-认证开班管理。")
         dat = self.nav_dat()
-        for key in dat:
+        for value in dat:
 
-            self.driver.find_element_by_xpath("//div[text()='%s']" % dat[key]).click()
+            self.driver.find_element_by_xpath("//div[text()='%s']" % value).click()
             self.sleep(2)
 
         # self.sleep(s)
@@ -40,7 +40,8 @@ class Login126(Page):
         # self.driver.find_element_by_xpath("//div[text()='认证开班管理']").click()
         # self.sleep(s + 1)
 
-    def nav_dat(self):
+    @staticmethod
+    def nav_dat():
         dat = ['储备认证管理', '认证管理', '认证开班管理']
         return dat
 
