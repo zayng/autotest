@@ -26,19 +26,8 @@ class Login126(Page):
         self.log.info("开始打开NHR菜单节点：HR单据申请-储备认证管理-认证管理-认证开班管理。")
         dat = self.nav_dat()
         for value in dat:
-
             self.driver.find_element_by_xpath("//div[text()='%s']" % value).click()
-            self.sleep(2)
-
-        # self.sleep(s)
-        # self.driver.find_element_by_xpath("//div[text()='HR单据申请']").click()
-        # self.sleep(s)
-        # self.driver.find_element_by_xpath("//div[text()='储备认证管理']").click()
-        # self.sleep(s)
-        # self.driver.find_element_by_xpath("//div[text()='认证管理']").click()
-        # self.sleep(s)
-        # self.driver.find_element_by_xpath("//div[text()='认证开班管理']").click()
-        # self.sleep(s + 1)
+            self.sleep(3)
 
     @staticmethod
     def nav_dat():
