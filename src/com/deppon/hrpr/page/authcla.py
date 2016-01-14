@@ -29,10 +29,10 @@ class AddClass(Page):
         cla_btn.click()
         # 输入新开班级名称
         classna = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
-        classna.send_keys(self.randname())
+        classna.send_keys(self.genera_name())
         # 输入新开班级地点
         address = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='address']")
-        address.send_keys(self.randname(False))
+        address.send_keys(self.genera_name(False))
 
     def down_level(self):
         """

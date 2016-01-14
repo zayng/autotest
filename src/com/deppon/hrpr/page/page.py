@@ -7,6 +7,7 @@ Created on '2016/1/4'
 import time
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 from com.deppon.hrpr.publ.log4 import Logger
 
@@ -54,7 +55,7 @@ class Page(object):
         self.driver.execute_script(scr)
 
     @staticmethod
-    def sleep(ss=2):
-        return time.sleep(ss)
+    def sleep(s):
+        return time.sleep(s)
 
 
