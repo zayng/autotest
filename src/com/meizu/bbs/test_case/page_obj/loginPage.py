@@ -52,9 +52,8 @@ class login(Page):
         """获取用户和密码登录"""
         self.open()
         self.bbs_login()
-        self.login_username()
-        self.login_password()
-        self.login_password()
+        self.login_username(username)
+        self.login_password(password)
         self.login_button()
         sleep(2)
 
@@ -67,7 +66,7 @@ class login(Page):
         return self.find_element(*self.user_error_hint_loc).text
 
     # 密码错误提示
-    def pawd_error_hint(self):
+    def pwd_error_hint(self):
         return self.find_element(*self.pawd_error_hint_loc).text
 
     # 登录成功用户名

@@ -7,6 +7,7 @@ import random
 import os
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as ex
@@ -14,10 +15,36 @@ from selenium.webdriver.support import expected_conditions as ex
 from com.deppon.hrpr.page.page import Page
 
 
-class AddClass(Page):
+class AddClassName(Page):
     """
     页面功能：新增认证开班
     """
+    #By Xapth
+    classbtn_locator = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
+    classname_locator = "//body/div[contains(@id,'ext-comp')]//input[@name='classname']"
+    classaddr_locator = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"
+
+    def cla_btn_element(self):
+        self.driver.find_elements_by_xpath(self.cla_btn).click()
+
+    def cla_name_element(self):
+        self.driver.find_elements_by_xpath(self.cla_name).send_keys(self.genera_name())
+
+    def cla_addr_element(self):
+        self.driver.find_elements_by_xpath(self.cla_addr).send_keys(self.genera_name(fno=False))
+
+
+
+    def page_element(self):
+        driver = self.driver
+        self.cla_btn = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
+        self.cla_name = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
+        self.cla_addr = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='address']")
+
+    def add_claname(self):
+        self.cla_btn.click()
+        self.cla_name.send_keys(self.genera_name())
+        self.cla_addr.send_keys(self.genera_name(False))
 
     def new_classname(self):
         """
@@ -42,7 +69,6 @@ class AddClass(Page):
         # 点击认证大类下拉选择框
         driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='identificationkind']").click()
         # 选择具体大类 //body/div[contains(@id,'boundlist')]//li[text()='IT类']
-
         driver.find_element_by_xpath("//ul[count(li)=13]/li[%s+1]" % self.large).click()
         # 点击认证层级下拉选择框
         driver.find_element_by_xpath(u"//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']").click()
@@ -122,7 +148,7 @@ class AddClass(Page):
     @staticmethod
     def write_classname(*args):
         """保存新增班级信息到文件
-        :param args: 班级名称，认证大类，认证层级，TS
+        args: 班级名称，认证大类，认证层级，TS
         """
         filename = os.path.abspath(r"../temp/class-name.dat")
         with open(filename, 'a') as f:
@@ -133,3 +159,4 @@ class AddClass(Page):
         if not fno:
             return "德邦学院D%r" % random.randint(100, 200)
         return "2015年第%r期认证开班" % random.randint(1, 9999)
+

@@ -7,9 +7,9 @@ Created on '2016/1/4'
 from com.deppon.hrpr.page.page import Page
 
 
-class Login126(Page):
+class LoginNHR(Page):
     """
-    登录www.126.com页面
+    登录nhr.deppon.com页面
     """
 
     def opennhr(self):
@@ -28,15 +28,13 @@ class Login126(Page):
     def nav_menu(self):
         self.log.info("开始打开NHR菜单节点：HR单据申请-储备认证管理-认证管理-认证开班管理。")
         nav_dat = ['储备认证管理', '认证管理', '认证开班管理']
-        self.driver.find_element_by_xpath("//div[text()='储备认证管理']").click()
-        self.sleep(2)
-        self.driver.find_element_by_xpath("//div[text()='认证管理']").click()
-        self.sleep(2)
-        self.driver.find_element_by_xpath("//div[text()='认证开班管理']").click()
-        # dat = nav_dat
-        # for value in dat:
-        #     self.driver.find_element_by_xpath("//div[text()='%s']" % value).click()
-        #     self.sleep(3)
+        dat = nav_dat
+        for value in dat:
+            self.sleep(3)
+            self.driver.find_element_by_xpath("//div[text()='%s']" % value).click()
+        else:
+            self.sleep(2)
+            self.log.info("NHR菜单节点打开完毕")
 
     @staticmethod
     def nav_dat():

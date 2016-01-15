@@ -5,12 +5,11 @@ Created on '2016/1/4'
 @author: '119937'
 """
 import time
+import logging
+import os
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-from com.deppon.hrpr.publ.log4 import Logger
-
 
 class Page(object):
     """
@@ -19,36 +18,36 @@ class Page(object):
 
     login_url = 'http://192.168.20.116:8080/nhr/login/index.action'
 
-    def __init__(self, base_url=login_url):
+    def __init__(self, driver, base_url=login_url):
         self.base_url = base_url
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.log = Logger().get_log()
+        self.log = logger()
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")
         self.driver.get(self.base_url)
         self.driver.maximize_window()
 
-    def find_element(self, *loc):
+    def findelement(self, *loc):
         return self.driver.find_element(*loc)
 
-    def find_element_by_xpath(self, loc):
+    def findelement_xpath(self, loc):
         return self.driver.find_element_by_xpath(loc)
 
-    def find_element_by_id(self, loc):
+    def findelement_id(self, loc):
         return self.driver.find_element_by_id(loc)
 
-    def find_element__by_class_name(self, loc):
-        return self.find_element__by_class_name(loc)
+    def findelement_class_name(self, loc):
+        return self.driver.find_elements_by_class_name(loc)
 
-    def find_element_by_name(self, loc):
+    def findelement_name(self, loc):
         return self.driver.find_element_by_name(loc)
 
-    def find_elements(self, *loc):
+    def findelements(self, *loc):
         return self.driver.find_elements(*loc)
 
-    def find_elements_by_xpath(self, loc):
+    def findelements_xpath(self, loc):
         return self.driver.find_elements_by_xpath(loc)
 
     def script(self, scr):
@@ -59,3 +58,17 @@ class Page(object):
         return time.sleep(s)
 
 
+def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG, flevel=logging.DEBUG):
+    log4 = logging.getLogger('brunch')
+    log4.setLevel(logging.DEBUG)
+    fmat = '[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s'
+    fmt = logging.Formatter(fmat, '%Y-%m-%d %H:%M:%S')
+    sh = logging.StreamHandler()
+    sh.setLevel(clevel)
+    sh.setFormatter(fmt)
+    fh = logging.FileHandler(name)
+    fh.setLevel(flevel)
+    fh.setFormatter(fmt)
+    log4.addHandler(sh)
+    log4.addHandler(fh)
+    return log4
