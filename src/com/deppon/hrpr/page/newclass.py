@@ -18,7 +18,7 @@ class AddClassName(Page, Support):
     """
     页面功能：新增认证开班
     """
-    #By Xapth
+    # By Xapth
     classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
     classname_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classname']"
     classaddr_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"

@@ -10,6 +10,7 @@ import os
 
 from selenium import webdriver
 
+
 class Page(object):
     """
     页面类基类，用于所有页面的继承。
@@ -59,7 +60,6 @@ class Page(object):
 
 def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG,
            flevel=logging.DEBUG):
-
     log4 = logging.getLogger('brunch')
     log4.setLevel(logging.DEBUG)
     fmat = "[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s"

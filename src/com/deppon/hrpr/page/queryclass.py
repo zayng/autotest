@@ -6,6 +6,7 @@ Created on '2016/1/18'
 """
 from com.deppon.hrpr.page.page import Page
 
+
 class QueryClass(Page):
 
     def queryclassname(self, classname):

@@ -10,4 +10,6 @@ from com.deppon.hrpr.page.queryclass import QueryClass
 driver = webdriver.Firefox()
 login = LoginNHR(driver)
 login.user_login()
+query = QueryClass()
+query.queryclass_page(*(1, 1))
 
