@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class BasePageElement(object):
     """
-    Base page class that is initalized on every page obejct class.
+    Base pages class that is initalized on every pages obejct class.
     """
 
     def __set__(self, obj, value):

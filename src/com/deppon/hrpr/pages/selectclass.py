@@ -4,7 +4,7 @@ Created on '2016/1/18'
 
 @author: '119937'
 """
-from com.deppon.hrpr.page.page import Page
+from com.deppon.hrpr.pages.page import Page
 
 class SelectClass(Page):
 

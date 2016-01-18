@@ -5,7 +5,7 @@ Created on 2015年11月3日
 """
 import os
 
-from com.deppon.hrpr.page.page import Page
+from com.deppon.hrpr.pages.page import Page
 
 class ImpStu(Page):
 

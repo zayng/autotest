@@ -7,7 +7,7 @@ Created on '2016/1/5'
 from selenium.webdriver.common.by import By
 
 class MainPageLocators(object):
-    """A class for main page locators. All main page locators should come here"""
+    """A class for main pages locators. All main pages locators should come here"""
     GO_BUTTON = (By.ID, 'submit')
 
 class SearchResultsPageLocators(object):

@@ -5,9 +5,9 @@ Created on '2016/1/18'
 @author: '119937'
 """
 
-from com.deppon.hrpr.page.page import Page
-from com.deppon.hrpr.page.common import Support
-from com.deppon.hrpr.page.queryjudges import QueryJudges
+from com.deppon.hrpr.pages.page import Page
+from com.deppon.hrpr.pages.common import Support
+from com.deppon.hrpr.pages.queryjudges import QueryJudges
 
 class AddTask(Page, Support, QueryJudges):
 
