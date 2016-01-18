@@ -36,13 +36,18 @@ class LoginNHR(Page):
             self.sleep(2)
             self.log.info("NHR菜单节点打开完毕")
 
+    def user_login(self, user="231432", pwd="qqqqqq"):
+        self.open()
+        self.login(user, pwd)
+        self.nav_menu()
+
     @staticmethod
     def nav_dat():
         dat = ['储备认证管理', '认证管理', '认证开班管理']
         return dat
 
 if __name__ == '__main__':
-    login = Login126()
+    login = LoginNHR()
     login.opennhr()
     login.login()
     login.nav_menu()

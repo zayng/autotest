@@ -31,7 +31,6 @@ class login(Page):
     login_button_loc = (By.ID, "login")
 
     # 登录用户名
-
     def login_username(self, username):
         self.find_element(*self.login_username_loc).send_keys(username)
 

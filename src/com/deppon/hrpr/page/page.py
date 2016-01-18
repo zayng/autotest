@@ -9,7 +9,6 @@ import logging
 import os
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 class Page(object):
     """
@@ -18,9 +17,9 @@ class Page(object):
 
     login_url = 'http://192.168.20.116:8080/nhr/login/index.action'
 
-    def __init__(self, driver, base_url=login_url):
+    def __init__(self, driver=webdriver.Firefox(), base_url=login_url):
         self.base_url = base_url
-        self.driver = webdriver.Firefox()
+        self.driver = driver
         self.driver.implicitly_wait(30)
         self.log = logger()
 
@@ -58,10 +57,12 @@ class Page(object):
         return time.sleep(s)
 
 
-def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG, flevel=logging.DEBUG):
+def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG,
+           flevel=logging.DEBUG):
+
     log4 = logging.getLogger('brunch')
     log4.setLevel(logging.DEBUG)
-    fmat = '[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s'
+    fmat = "[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s"
     fmt = logging.Formatter(fmat, '%Y-%m-%d %H:%M:%S')
     sh = logging.StreamHandler()
     sh.setLevel(clevel)

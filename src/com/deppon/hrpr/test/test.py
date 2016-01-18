@@ -6,7 +6,7 @@ Created on '2016/1/15'
 """
 
 from com.deppon.hrpr.page.login import LoginNHR
-from com.deppon.hrpr.page.authcla import AddClassName
+from com.deppon.hrpr.page.newclass import AddClassName
 from selenium import webdriver
 
 if __name__ == '__main__':
