@@ -22,27 +22,24 @@ class QueryClass(Page):
 
     def querylarge(self, large):
         """选择查询的认证大类"""
-
         identi_loc = "//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']"
-        self.sleep(2)
+        self.sleep(1)
         self.driver.find_element_by_xpath(identi_loc).click()
-        self.sleep(2)
         li_element = self.driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s+1]" % large).pop()
         li_element.click()
 
     def queryclasslevel(self, level):
         """选择查询的认证层级"""
         classlevel_loc = "//div[@id='T_authinfo-authClassMng']//input[@name='classlevel']"
-        self.sleep(2)
+        self.sleep(1)
         self.driver.find_element_by_xpath(classlevel_loc).click()
-        self.sleep(2)
         level_element = self.driver.find_elements_by_xpath("//ul[count(li)=4]/li[%s+1]" % level).pop()
         level_element.click()
 
     def queryauthinfo(self):
         """点击查询按钮 """
         query_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='查询']]"
-        self.sleep(2)
+        self.sleep(1)
         self.driver.find_element_by_xpath(query_loc).click()
 
     def queryclass_page(self, **cla):

@@ -10,6 +10,6 @@ from com.deppon.hrpr.pages.queryclass import QueryClass
 driver = webdriver.Firefox()
 login = LoginNHR(driver)
 login.user_login()
-query = QueryClass()
-query.queryclass_page(*(1, 1))
+query = QueryClass(driver)
+query.queryclass_page(**{'classname': '2015年第7163期认证开班', 'large': 1, 'level': 1})
 
