@@ -11,7 +11,7 @@ from com.deppon.hrpr.pages.selectclass import SelectClass
 from com.deppon.hrpr.pages.newstudent import ImpStudent
 
 driver = webdriver.Firefox()
-# 登登录NHR
+# 登录NHR
 login = LoginNHR(driver)
 login.user_login()
 # 查询选拔认证班级
