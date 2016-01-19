@@ -22,7 +22,8 @@ class Page(object):
         self.base_url = base_url
         self.driver = base_driver
         self.driver.implicitly_wait(30)
-        self.log = self.logger()
+        if self.log is None:
+            self.log = self.logger()
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")

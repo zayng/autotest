@@ -9,18 +9,19 @@ from com.deppon.hrpr.pages.login import LoginNHR
 from com.deppon.hrpr.pages.queryclass import QueryClass
 from com.deppon.hrpr.pages.selectclass import SelectClass
 from com.deppon.hrpr.pages.newstudent import ImpStudent
+
 driver = webdriver.Firefox()
-#登登录NHR
+# 登登录NHR
 login = LoginNHR(driver)
 login.user_login()
-#查询选拔认证班级
+# 查询选拔认证班级
 query = QueryClass(driver)
 query.queryclass_page(**{'large': 1, 'level': 1})
 # query.queryclass_page(**{'classname': '2015年第7163期认证开班', 'large': 1, 'level': 1})
-#选择选拔认证班级
+# 选择选拔认证班级
 setup = SelectClass(driver)
 setup.select_authlist_page(key=1)
 setup.save_classinfo()
-#导入认证选拔学员名单
+# 导入认证选拔学员名单
 imp = ImpStudent(driver)
 imp.imp_student_page()
