@@ -16,8 +16,7 @@ class LoginNHR(Page):
         self.open()
 
     def login(self, user="231432", pwd="qqqqqq"):
-        self.log.info("使用账号登陆NHR系统")
-        self.log.info(user + ',' + pwd)
+        """输入用户和密码"""
         username = self.driver.find_element_by_id("loginName")
         password = self.driver.find_element_by_id("password")
         loginbtn = self.driver.find_element_by_class_name("a_login")
@@ -37,7 +36,9 @@ class LoginNHR(Page):
             self.log.info("NHR菜单节点打开完毕")
 
     def user_login(self, user="231432", pwd="qqqqqq"):
-        self.open()
+        self.log.info("使用账号登陆NHR系统")
+        self.log.info(user + ',' + pwd)
+        self.opennhr()
         self.login(user, pwd)
         self.nav_menu()
 

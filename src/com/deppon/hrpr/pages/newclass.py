@@ -18,19 +18,21 @@ class AddClassName(Page, Support):
     """
     页面功能：新增认证开班
     """
-    # By Xapth
     classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
     classname_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classname']"
     classaddr_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"
 
     def cla_btn_element(self):
+        """点击新增班级按钮"""
         self.sleep(2)
         self.driver.find_element_by_xpath(self.classbtn_loc).click()
 
     def cla_name_element(self):
+        """填写班级名称"""
         self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_name())
 
     def cla_addr_element(self):
+        """填写开班地点"""
         self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_name(fno=False))
 
     def add_classname_page(self):
@@ -38,46 +40,25 @@ class AddClassName(Page, Support):
         self.cla_name_element()
         self.cla_addr_element()
 
-    def add_classname(self):
-        """
-        在班级列表，点击新增按钮添加新班级
-        """
+    def down_large_element(self, large):
+        """选择新增班级的认证大类"""
         driver = self.driver
-        cla_btn = driver.find_element_by_xpath("//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]")
-        cla_btn.click()
-        classna = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='classname']")
-        classna.send_keys(self.genera_name())
-        address = driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='address']")
-        address.send_keys(self.genera_name(False))
-
-    def down_level(self, large, level):
-        """
-        选择新开班级的认证大类和认证层级
-        """
-        driver = self.driver
-        # 点击认证大类下拉选择框
-        driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='identificationkind']").click()
-        # 选择具体大类 //body/div[contains(@id,'boundlist')]//li[text()='IT类']
-        driver.find_element_by_xpath("//ul[count(li)=13]/li[%s+1]" % large).click()
-        # 点击认证层级下拉选择框
-        driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']").click()
-        # 选择层级
-        driver.find_element_by_xpath("//ul[count(li)=4]/li[%s+1]" % level).click()
-
-    def down_large_element(self, large, level):
-        """选择新增班级的认证大类和认证层级"""
-        driver = self.driver
-        # 元素管理：认证大类下拉选择框，认证层级下拉选择框
         identifica_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='identificationkind']"
-        classlevel_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']"
         # 选择认证大类
         driver.find_element_by_xpath(identifica_loc).click()
         driver.find_element_by_xpath("//ul[count(li)=13]/li[%s+1]" % large).click()
+
+    def down_level_element(self, level):
+        """
+        选择新开班级的认证层级
+        """
+        driver = self.driver
+        classlevel_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classlevel']"
         # 选择认证层级
         driver.find_element_by_xpath(classlevel_loc).click()
         driver.find_element_by_xpath("//ul[count(li)=4]/li[%s+1]" % level).click()
 
-    def written_exam(self, large, level):
+    def written_results(self, large, level):
         """认证笔试成绩分为专业笔试和专业影响力，系统默认笔试成绩占比20%，专业影响力占比10%。
          0-中级，1-高级，2-资深，3-专家
          其中IT类，IT需求与规划序列，IT研发序列认证笔试成绩占比为0.
@@ -96,9 +77,11 @@ class AddClassName(Page, Support):
             majorratio.clear()
             majorratio.send_keys(10)
 
-    def select_level_page(self, large, level):
-        self.down_level(large, level)
-        self.written_exam(large, level)
+    def down_classlevel_page(self, large, level):
+        """选择新开班级认证大类和层级，并根据大类和成绩设置笔试成绩或是专业影响力占比"""
+        self.down_large_element(large)
+        self.down_level_element(level)
+        self.written_results(large, level)
 
     def addclass_begintime(self):
         begin_time = "//td[@id='newClassbegintime-inputCell']/following-sibling::td/div[1]"
@@ -110,12 +93,13 @@ class AddClassName(Page, Support):
         self.driver.find_element_by_xpath(end_time).click()
         self.select_datetime(23, 30, 20, yy=2016, mm=1, dd=27, fg=1)
 
-    def select_date_page(self):
+    def set_datetime_page(self):
+        """设置新开班级的开始时间和结束时间"""
         self.addclass_begintime()
         self.addclass_endtime()
 
     def save_class(self):
-        # 保存新增班级
+        """保存新增班级"""
         savecla = self.driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")
         savecla.click()
         self.sleep(3)
@@ -129,9 +113,10 @@ class AddClassName(Page, Support):
 
     def classname_page(self, large, level):
         """包含新增班级所有页面操作 """
+        self.log.info("开始新增认证班级操作")
         self.add_classname_page()
-        self.select_level_page(large, level)
-        self.select_date_page()
+        self.down_classlevel_page(large, level)
+        self.set_datetime_page()
         self.save_classname_page()
 
     @staticmethod

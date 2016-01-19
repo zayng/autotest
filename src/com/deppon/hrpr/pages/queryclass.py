@@ -44,6 +44,7 @@ class QueryClass(Page):
 
     def queryclass_page(self, **cla):
         """班级查询操作"""
+        self.log.info("开始查询认证班级操作")
         if 'classname' in cla.keys():
             self.queryclassname(cla['classname'])
         self.querylarge(cla['large'])

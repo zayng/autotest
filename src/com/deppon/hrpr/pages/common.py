@@ -44,7 +44,6 @@ class Support(object):
     def selectclassname(self, key):
         authlist_loc = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
         authlist_mnt = self.driver.find_elements_by_xpath(authlist_loc)
-        classinfo = authlist_mnt.text
         if len(authlist_mnt) == 1:
             authlist_mnt.pop().click()
         else:

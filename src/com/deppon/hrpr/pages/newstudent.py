@@ -7,7 +7,7 @@ import os
 
 from com.deppon.hrpr.pages.page import Page
 
-class ImpStu(Page):
+class ImpStudent(Page):
 
     # By xpath
     def notice_student(self):
@@ -49,6 +49,7 @@ class ImpStu(Page):
         """ 从本地Excel到入学员
         :param filename: 导入学员Excel文件路径
         """
+        self.log.info("开始导入班级学员")
         self.notice_student()
         self.search_student(filename)
         self.imp_student_page()

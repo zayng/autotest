@@ -18,11 +18,11 @@ class Page(object):
 
     login_url = 'http://192.168.20.116:8080/nhr/login/index.action'
 
-    def __init__(self, driver=webdriver.Firefox(), base_url=login_url):
+    def __init__(self, base_driver=None, base_url=login_url):
         self.base_url = base_url
-        self.driver = driver
+        self.driver = base_driver
         self.driver.implicitly_wait(30)
-        self.log = logger()
+        self.log = self.logger()
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")
@@ -57,19 +57,19 @@ class Page(object):
     def sleep(s):
         return time.sleep(s)
 
-
-def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG,
-           flevel=logging.DEBUG):
-    log4 = logging.getLogger('brunch')
-    log4.setLevel(logging.DEBUG)
-    fmat = "[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s"
-    fmt = logging.Formatter(fmat, '%Y-%m-%d %H:%M:%S')
-    sh = logging.StreamHandler()
-    sh.setLevel(clevel)
-    sh.setFormatter(fmt)
-    fh = logging.FileHandler(name)
-    fh.setLevel(flevel)
-    fh.setFormatter(fmt)
-    log4.addHandler(sh)
-    log4.addHandler(fh)
-    return log4
+    @staticmethod
+    def logger(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=logging.DEBUG,
+               flevel=logging.DEBUG):
+        log4 = logging.getLogger('brunch')
+        log4.setLevel(logging.DEBUG)
+        fmat = "[%(asctime)s] %(filename)s[line:%(lineno)d] %(levelname)s %(message)s"
+        fmt = logging.Formatter(fmat, '%Y-%m-%d %H:%M:%S')
+        sh = logging.StreamHandler()
+        sh.setLevel(clevel)
+        sh.setFormatter(fmt)
+        fh = logging.FileHandler(name)
+        fh.setLevel(flevel)
+        fh.setFormatter(fmt)
+        log4.addHandler(sh)
+        log4.addHandler(fh)
+        return log4
