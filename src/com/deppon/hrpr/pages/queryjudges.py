@@ -22,16 +22,20 @@ class QueryJudges(Page):
             emp_mnt.clear()
             emp_mnt.send_keys(empcode[emp])
 
-            querybutton = "//div[contains(@id,'button') and @style='border-width: 1px; left: 293px; " \
-                          "margin:0px; top: 0px; width: 75px;']//button[span[text()='查询']]"
+            querybutton = "//div[div/table//label[text()='员工工号:']]/following-sibling::div" \
+                          "//button[span[text()='查询']]"
             self.driver.find_elements_by_xpath(querybutton).pop().click()
             self.sleep(3)
-            self.driver.find_elements_by_xpath("//tr[count(td)=10]/td[1]").pop().click()
-            check_str = "//div[em[button[span[text()='清空收件人']]]]/preceding-sibling::div//button[span" \
-                        "[text()='确定']]"
+            check_emps = self.driver.find_elements_by_xpath("//tr[count(td)=10]/td[1]")
+            check_emp = check_emps.pop()
+            check_emp.click()
+            check_str = "//div[em/button/span[text()='清空收件人']]/preceding-sibling::div//" \
+                        "button[span[text()='确定']]"
             self.sleep(1)
             self.driver.find_elements_by_xpath(check_str).pop().click()
-        close_mnt = self.driver.find_elements_by_xpath("//button[span[text()='关闭']]")
+        close_btn = "//div[em/button/span[text()='清空收件人']]/following-sibling::div//" \
+                    "button[span[text()='关闭']]"
+        close_mnt = self.driver.find_elements_by_xpath(close_btn)
         close_mnt.pop().click()
 
     def queryjudges(self, *empcode):

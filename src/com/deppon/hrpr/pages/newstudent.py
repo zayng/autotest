@@ -5,6 +5,8 @@ Created on 2015年11月3日
 """
 import os
 
+from selenium.webdriver.support.ui import WebDriverWait
+
 from com.deppon.hrpr.pages.page import Page
 
 class ImpStudent(Page):
@@ -35,6 +37,7 @@ class ImpStudent(Page):
         try:
             self.sleep(2)
             self.driver.find_element_by_xpath("//button[span[text()='导入']]").click()
+            self.sleep(3)
             self.driver.find_element_by_xpath(confirm_loc).click()
         except Exception as e:
             self.log.error("导入学员文件错误，异常信息" + str(e))
@@ -52,5 +55,5 @@ class ImpStudent(Page):
         self.log.info("开始导入班级学员")
         self.notice_student()
         self.search_student(filename)
-        self.imp_student_page()
+        self.import_student()
         self.revert_page()

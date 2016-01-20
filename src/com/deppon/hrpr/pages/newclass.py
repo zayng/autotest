@@ -10,11 +10,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 
-from com.deppon.hrpr.pages.page import Page
 from com.deppon.hrpr.pages.common import Support
 
 
-class AddClassName(Page, Support):
+class AddClassName(Support):
     """
     页面功能：新增认证开班
     """
@@ -29,11 +28,11 @@ class AddClassName(Page, Support):
 
     def cla_name_element(self):
         """填写班级名称"""
-        self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_name())
+        self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_classname())
 
     def cla_addr_element(self):
         """填写开班地点"""
-        self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_name(fno=False))
+        self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_classname(fno=False))
 
     def add_classname_page(self):
         self.cla_btn_element()
@@ -111,7 +110,7 @@ class AddClassName(Page, Support):
     def save_classname_page(self):
         self.save_class()
 
-    def classname_page(self, large, level):
+    def add_newclass_page(self, large=0, level=0):
         """包含新增班级所有页面操作 """
         self.log.info("开始新增认证班级操作")
         self.add_classname_page()
@@ -129,10 +128,11 @@ class AddClassName(Page, Support):
             f.writelines("%s#%s#%s#'%s'\n" % args)
 
     @staticmethod
-    def genera_name(fno=True):
-        if not fno:
+    def genera_classname(fno=True):
+        if fno:
+            return "2015年第%r期认证开班" % random.randint(1, 9999)
+        else:
             return "德邦学院D%r" % random.randint(100, 200)
-        return "2015年第%r期认证开班" % random.randint(1, 9999)
 
 if __name__ == '__main__':
     pass

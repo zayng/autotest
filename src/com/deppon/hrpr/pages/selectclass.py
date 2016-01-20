@@ -6,6 +6,7 @@ Created on '2016/1/18'
 """
 from com.deppon.hrpr.pages.page import Page
 
+
 class SelectClass(Page):
 
     def selectclassname(self, key=-1):

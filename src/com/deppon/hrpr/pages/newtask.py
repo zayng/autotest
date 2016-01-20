@@ -4,13 +4,14 @@ Created on '2016/1/18'
 
 @author: '119937'
 """
+import random
 
-from com.deppon.hrpr.pages.page import Page
+# from com.deppon.hrpr.pages.page import Page
 from com.deppon.hrpr.pages.common import Support
 from com.deppon.hrpr.pages.queryjudges import QueryJudges
 
-class AddTask(Page, Support, QueryJudges):
 
+class AddTask(QueryJudges, Support):
     def notice_judges(self):
         """点击评委通知按钮"""
         self.sleep(2)
@@ -65,7 +66,9 @@ class AddTask(Page, Support, QueryJudges):
         retn_loc = "//div[@id='savejudgebutton']/following-sibling::div//button"
         self.driver.find_element_by_xpath(retn_loc).click()
 
-    def add_certitask_page(self, taskname, empcode=('119937', '116460', '000120', '000121')):
+    def add_certitask_page(self, taskname=None, empcode=('119937', '116460', '000120', '000121')):
+        if taskname is None:
+            taskname = self.genera_taskname()
         self.notice_judges()
         self.add_task()
         self.add_taskname(taskname)
@@ -77,3 +80,9 @@ class AddTask(Page, Support, QueryJudges):
     def add_repottask_page(self):
         pass
 
+    @staticmethod
+    def genera_taskname(fno=True):
+        if fno:
+            return "认证面谈%s" % random.randint(100, 200)
+        else:
+            return "演讲面谈%s" % random.randint(200, 400)

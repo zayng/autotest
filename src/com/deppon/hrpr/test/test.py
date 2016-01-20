@@ -5,16 +5,14 @@ Created on '2016/1/15'
 @author: '119937'
 """
 
-from com.deppon.hrpr.pages.login import LoginNHR
-from com.deppon.hrpr.pages.newclass import AddClassName
-from selenium import webdriver
+from random import randint
 
-if __name__ == '__main__':
-    driver = webdriver.Firefox()
-    login = LoginNHR(driver)
-    login.opennhr()
-    login.login()
-    login.nav_menu()
-    driver = login.driver
-    ath = AddClassName(driver)
-    ath.add_claname()
+
+allNums = []
+
+for eachNum in range(9):
+    allNums.append(randint(1, 99))
+print(list(filter(lambda n: n % 2, allNums)))
+
+m = map((lambda x: x+2), [0, 1 , 2, 3 , 4, 5])
+print(list(m))

@@ -7,8 +7,9 @@ Created on '2016/1/18'
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 
+from com.deppon.hrpr.pages.page import Page
 
-class Support(object):
+class Support(Page):
 
     def select_datetime(self, *dptime, **dpdate):
         """用于界面选择日期"""
@@ -41,19 +42,12 @@ class Support(object):
             driver.find_element_by_id("dpTodayInput").click()
         driver.switch_to_default_content()
 
-    def selectclassname(self, key):
-        authlist_loc = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
-        authlist_mnt = self.driver.find_elements_by_xpath(authlist_loc)
-        if len(authlist_mnt) == 1:
-            authlist_mnt.pop().click()
-        else:
-            authlist_mnt.pop(key).click()
+    def selectclassname(self, key=-1):
+        authlist_locs = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
+        authlist_mnts = self.driver.find_elements_by_xpath(authlist_locs)
+        authlist_mnts.pop(key).click()
 
     def select_authlist_page(self, key=0):
+        self.log.info("开始选择认证班级操作")
         self.selectclassname(key)
 
-    def save_classinfo(self):
-        """保存被选中班级的信息"""
-        authlist_loc = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
-        authlist_mnt = self.driver.find_elements_by_xpath(authlist_loc)
-        classinfo = authlist_mnt.text()

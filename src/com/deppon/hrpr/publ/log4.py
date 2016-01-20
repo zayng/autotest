@@ -55,6 +55,7 @@ def logger1(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=log
     sh = logging.StreamHandler()
     sh.setLevel(clevel)
     sh.setFormatter(fmt)
+
     # 日志输出到文件
     fh = logging.FileHandler(name)
     fh.setLevel(flevel)
@@ -64,7 +65,8 @@ def logger1(name=os.path.join(os.path.abspath('../log'), 'log1.txt'), clevel=log
     return logger
 
 
-# log = Logger().get_log()
+logger = Logger()
+log4 = logger.get_log()
 
 if __name__ == '__main__':
     log2 = Logger().get_log()
