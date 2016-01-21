@@ -6,6 +6,8 @@ Created on '2016/1/18'
 """
 import random
 
+from selenium.common.exceptions import NoSuchElementException
+
 # from com.deppon.hrpr.pages.page import Page
 from com.deppon.hrpr.pages.common import Support
 from com.deppon.hrpr.pages.queryjudges import QueryJudges
@@ -17,11 +19,79 @@ class AddTask(QueryJudges, Support):
         self.sleep(2)
         self.driver.find_element_by_xpath(u"//button[span[text()='评委通知']]").click()
 
-    def add_task(self):
-        """添加测评任务-认证面谈"""
+    def add_task_type1(self):
+        """认证层级：中级，高级
+        添加测评任务-认证面谈
+        """
         self.sleep(2)
         self.driver.find_element_by_xpath("//td[@id='authtasktype1-inputCell']").click()
         self.driver.find_element_by_xpath("//li[text()='认证面谈']").click()
+
+    def add_task_type2(self):
+        """认证层级：资深
+        添加测评任务-认证面谈
+        """
+        self.sleep(2)
+        self.driver.find_element_by_xpath("//td[@id='authtasktype2-inputCell']").click()
+        self.driver.find_element_by_xpath("//li[text()='认证面谈']").click()
+
+    def add_repottask_type2(self):
+        """认证层级：资深
+        添加测评任务-认证面谈
+        """
+        self.sleep(2)
+        self.driver.find_element_by_xpath("//td[@id='authtasktype2-inputCell']").click()
+        self.driver.find_element_by_xpath("//li[text()='课题汇报']").click()
+
+    def add_task_type3(self):
+        """认证层级：专家
+        添加测评任务-课题汇报
+        """
+        self.sleep(2)
+        self.driver.find_element_by_xpath("//td[@id='authtasktype3-inputCell']").click()
+        self.driver.find_element_by_xpath("//li[text()='课题汇报']").click()
+
+    def is_authtasktype1_present(self):
+        authtasktype1 = "//td[@id='authtasktype1-inputCell']"
+        try:
+            self.sleep(1)
+            is_type1 = self.driver.find_element_by_xpath(authtasktype1).is_displayed()
+            if is_type1:
+                return True
+            else:
+                return False
+        except NoSuchElementException as e:
+            return False
+
+    def is_authtasktype2_present(self):
+        authtasktype2 = "//td[@id='authtasktype2-inputCell']"
+        try:
+            self.sleep(1)
+            is_type2 = self.driver.find_element_by_xpath(authtasktype2).is_displayed()
+            if is_type2:
+                return True
+            else:
+                return False
+        except NoSuchElementException as e:
+            return False
+
+    def is_authtasktype3_present(self):
+        authtasktype3 = "//td[@id='authtasktype3-inputCell']"
+        try:
+            self.sleep(1)
+            is_type3 = self.driver.find_element_by_xpath(authtasktype3).is_displayed()
+            if is_type3:
+                return True
+            else:
+                return False
+        except NoSuchElementException as e:
+            return False
+
+    def add_reporttask(self):
+        """添加测评任务-演讲面谈"""
+        self.sleep(2)
+        self.driver.find_element_by_xpath("//td[@id='authtasktype1-inputCell']").click()
+        self.driver.find_element_by_xpath("//li[text()='课题汇报']").click()
 
     def add_taskname(self, taskname):
         """填写任务名称"""
@@ -66,23 +136,48 @@ class AddTask(QueryJudges, Support):
         retn_loc = "//div[@id='savejudgebutton']/following-sibling::div//button"
         self.driver.find_element_by_xpath(retn_loc).click()
 
-    def add_certitask_page(self, taskname=None, empcode=('119937', '116460', '000120', '000121')):
-        if taskname is None:
-            taskname = self.genera_taskname()
-        self.notice_judges()
-        self.add_task()
+    def add_certitask_page(self, taskname, *empcode):
+        self.log.info("开始添加认证面谈")
+        if self.is_authtasktype1_present():
+            self.add_task_type1()
+        if self.is_authtasktype2_present():
+            self.add_task_type2()
         self.add_taskname(taskname)
         self.task_begintime()
         self.add_judges(*empcode)
         self.save_task()
+
+    def add_repottask_page(self, taskname, *empcode):
+        self.log.info("开始添加课题汇报")
+        if self.is_authtasktype2_present():
+            self.add_repottask_type2()
+        if self.is_authtasktype3_present():
+            self.add_task_type3()
+        self.add_taskname(taskname)
+        self.task_begintime()
+        self.add_judges(*empcode)
+        self.save_task()
+
+    def add_task_page(self, taskname=None, empcode=('119937', '116460', '000120', '000121')):
+        """开始添加测评任务以及评委操作
+        :param taskname: 定义任务名称，默认使用随机生成任务名称
+        :param empcode: 评委工号
+        """
+        self.log.info("开始添加测评任务以及评委操作")
+        self.notice_judges()
+        if self.is_authtasktype1_present() or self.is_authtasktype2_present():
+            if taskname is None:
+                taskname = self.genera_taskname()
+            self.add_certitask_page(taskname, *empcode)
+        if self.is_authtasktype2_present() or self.is_authtasktype3_present():
+            if taskname is None:
+                taskname = self.genera_taskname(task_type=False)
+            self.add_repottask_page(taskname, *empcode)
         self.close_task()
 
-    def add_repottask_page(self):
-        pass
-
     @staticmethod
-    def genera_taskname(fno=True):
-        if fno:
+    def genera_taskname(task_type=True):
+        if task_type:
             return "认证面谈%s" % random.randint(100, 200)
         else:
-            return "演讲面谈%s" % random.randint(200, 400)
+            return "课题汇报%s" % random.randint(200, 400)

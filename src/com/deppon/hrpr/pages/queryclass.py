@@ -23,7 +23,7 @@ class QueryClass(Page):
     def querylarge(self, large):
         """选择查询的认证大类"""
         identi_loc = "//div[@id='T_authinfo-authClassMng']//input[@name='identificationkind']"
-        self.sleep(1)
+        self.sleep(2)
         self.driver.find_element_by_xpath(identi_loc).click()
         li_element = self.driver.find_elements_by_xpath("//ul[count(li)>=13]/li[%s+1]" % large).pop()
         li_element.click()
