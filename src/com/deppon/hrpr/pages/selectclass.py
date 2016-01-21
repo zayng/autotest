@@ -12,7 +12,10 @@ class SelectClass(Page):
     def selectclassname(self, key=-1):
         authlist_locs = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
         authlist_mnts = self.driver.find_elements_by_xpath(authlist_locs)
-        authlist_mnts.pop(key).click()
+        try:
+            authlist_mnts.pop(key).click()
+        except Exception as e:
+            self.log.error("选择列表中班级操作发生异常." + str(e))
 
     def select_authlist_page(self, key=0):
         self.log.info("开始选择认证班级操作")

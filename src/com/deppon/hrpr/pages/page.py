@@ -9,6 +9,8 @@ import logging
 import os
 
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+
 from com.deppon.hrpr.publ.log4g import logger1
 
 
@@ -18,10 +20,11 @@ class Page(object):
     """
 
     login_url = 'http://192.168.20.116:8080/nhr/login/index.action'
+    # fire_driver = webdriver.Firefox()
 
-    def __init__(self, base_driver=None, base_url=login_url):
+    def __init__(self, base_drive=None, base_url=login_url):
         self.base_url = base_url
-        self.driver = base_driver
+        self.driver = base_drive
         self.driver.implicitly_wait(30)
         self.log = logger1()
 
