@@ -97,6 +97,7 @@ class AddTask(QueryJudges, Support):
         """填写任务名称"""
         self.sleep(2)
         taskname_mnt = self.driver.find_element_by_xpath("//input[@name='taskname']")
+        taskname_mnt.clear()
         taskname_mnt.send_keys(taskname)
 
     def task_begintime(self):
@@ -128,7 +129,7 @@ class AddTask(QueryJudges, Support):
         msg_loc = "//div[contains(@id,'messagebox')]//button[span[text()='确定']]"
         self.sleep(2)
         self.driver.find_element_by_xpath("//button[@id='savejudgebutton-btnEl']").click()
-        self.driver.find_element_by_xpath().click(msg_loc)
+        self.driver.find_element_by_xpath(msg_loc).click()
 
     def close_task(self):
         """关闭评委任务页面"""

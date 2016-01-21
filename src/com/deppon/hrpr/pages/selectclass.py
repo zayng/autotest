@@ -13,7 +13,6 @@ class SelectClass(Page):
         authlist_locs = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
         authlist_mnts = self.driver.find_elements_by_xpath(authlist_locs)
         try:
-            print(len(authlist_mnts), "==>", key)
             authlist_mnts.pop(key).click()
         except Exception as e:
             self.log.error("选择列表中班级操作发生异常." + str(e))

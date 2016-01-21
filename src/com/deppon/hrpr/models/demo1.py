@@ -21,7 +21,7 @@ login.user_login()
 # add.add_newclass_page()
 # 查询选拔认证班级
 query = QueryClass(driver)
-query.queryclass_page(**{'large': 2, 'level': 1})
+query.queryclass_page(**{'large': 2, 'level': 3})
 # query.queryclass_page(**{'classname': '2015年第7163期认证开班', 'large': 1, 'level': 1})
 # 选择选拔认证班级
 setup = SelectClass(driver)
