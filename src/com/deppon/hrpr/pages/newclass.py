@@ -9,6 +9,8 @@ import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 
 from com.deppon.hrpr.pages.common import Support
 
@@ -26,18 +28,24 @@ class AddClassName(Support):
         self.sleep(2)
         self.driver.find_element_by_xpath(self.classbtn_loc).click()
 
-    def cla_name_element(self):
+    def cla_name_element(self, classname):
         """填写班级名称"""
-        self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_classname())
+        if classname is None:
+            self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_classname())
+        else:
+            self.driver.find_element_by_xpath(self.classname_loc).send_keys(classname)
 
-    def cla_addr_element(self):
+    def cla_addr_element(self, classaddr):
         """填写开班地点"""
-        self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_classname(fno=False))
+        if classaddr is None:
+            self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_classname(fno=False))
+        else:
+            self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(classaddr)
 
-    def add_classname_page(self):
+    def add_classname_page(self, classname, classaddr):
         self.cla_btn_element()
-        self.cla_name_element()
-        self.cla_addr_element()
+        self.cla_name_element(classname)
+        self.cla_addr_element(classaddr)
 
     def down_large_element(self, large):
         """选择新增班级的认证大类"""
@@ -102,21 +110,43 @@ class AddClassName(Support):
         savecla = self.driver.find_element_by_xpath("//body/div[contains(@id,'ext-comp')]//button[span[text()='确定']]")
         savecla.click()
         self.sleep(3)
-        # smsg = "//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
         rmsg = "//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]"
-        conf_elem = WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, rmsg)))
+        conf_elem = WebDriverWait(self.driver, 3).until(ex.presence_of_element_located((By.XPATH, rmsg)))
         conf_elem.click()
 
     def save_classname_page(self):
         self.save_class()
 
-    def add_newclass_page(self, large=0, level=0):
-        """包含新增班级所有页面操作 """
+    def add_newclass_page(self, classname=None, classaddr=None, large=0, level=0):
+        """包含新增班级所有页面操作
+        :param classname: 班级名称
+        :param classaddr: 班级地点
+        :param large: 认证大类
+        :param level: 认证层级
+        """
         self.log.info("开始新增认证班级操作")
-        self.add_classname_page()
+        self.add_classname_page(classname, classaddr)
         self.down_classlevel_page(large, level)
         self.set_datetime_page()
         self.save_classname_page()
+
+    def is_element_present_success(self):
+        success_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
+        try:
+            self.driver.find_element_by_xpath(success_msg)
+        except (NoSuchElementException, TimeoutException) as e:
+            self.log.info(e)
+            return False
+        return True
+
+    def is_element_present_required(self):
+        required_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'必输项为空或输入有误!')]"
+        try:
+            self.driver.find_element_by_xpath(required_msg)
+        except (NoSuchElementException, TimeoutException) as e:
+            self.log.info(e)
+            return False
+        return True
 
     @staticmethod
     def write_classname(*args):
@@ -133,6 +163,3 @@ class AddClassName(Support):
             return "2015年第%r期认证开班" % random.randint(1, 9999)
         else:
             return "德邦学院D%r" % random.randint(100, 200)
-
-if __name__ == '__main__':
-    pass
