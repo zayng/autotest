@@ -69,19 +69,19 @@ class NewclassTest(unittest.TestCase):
     def test_add_business(self):
         """新增所有认证开班"""
         add = AddClassName(self.driver)
-        for large in range(13):
-            for level in range(4):
-                add.add_newclass_page(large=0, level=3)
+        for la in range(13):
+            for le in range(4):
+                add.add_newclass_page(large=la, level=le)
                 self.assertTrue(add.is_element_present_success(), "新增保存失败！")
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(NewclassTest("test_add_classname_empty"))
     suite.addTest(NewclassTest("test_add_classaddr_empty"))
-    suite.addTest(NewclassTest("test_add_middle_grade"))
-    suite.addTest(NewclassTest("test_add_high_grade"))
-    suite.addTest(NewclassTest("test_add_senior_grade"))
-    suite.addTest(NewclassTest("test_add_expert_grade"))
+    # suite.addTest(NewclassTest("test_add_middle_grade"))
+    # suite.addTest(NewclassTest("test_add_high_grade"))
+    # suite.addTest(NewclassTest("test_add_senior_grade"))
+    # suite.addTest(NewclassTest("test_add_expert_grade"))
 
     runner = unittest.TextTestRunner()
     runner.run(suite)

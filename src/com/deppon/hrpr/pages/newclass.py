@@ -19,28 +19,30 @@ class AddClassName(Support):
     """
     页面功能：新增认证开班
     """
-    classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
-    classname_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classname']"
-    classaddr_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"
+    # classname_loc = "//body/div[sscontains(@id,'ext-comp')]//input[@name='classname']"
+    # classaddr_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"
 
     def cla_btn_element(self):
         """点击新增班级按钮"""
+        classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
         self.sleep(2)
-        self.driver.find_element_by_xpath(self.classbtn_loc).click()
+        self.driver.find_element_by_xpath(classbtn_loc).click()
 
     def cla_name_element(self, classname):
         """填写班级名称"""
+        classname_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='classname']"
         if classname is None:
-            self.driver.find_element_by_xpath(self.classname_loc).send_keys(self.genera_classname())
+            self.driver.find_element_by_xpath(classname_loc).send_keys(self.genera_classname())
         else:
-            self.driver.find_element_by_xpath(self.classname_loc).send_keys(classname)
+            self.driver.find_element_by_xpath(classname_loc).send_keys(classname)
 
     def cla_addr_element(self, classaddr):
         """填写开班地点"""
+        classaddr_loc = "//body/div[contains(@id,'ext-comp')]//input[@name='address']"
         if classaddr is None:
-            self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(self.genera_classname(fno=False))
+            self.driver.find_element_by_xpath(classaddr_loc).send_keys(self.genera_classname(fno=False))
         else:
-            self.driver.find_element_by_xpath(self.classaddr_loc).send_keys(classaddr)
+            self.driver.find_element_by_xpath(classaddr_loc).send_keys(classaddr)
 
     def add_classname_page(self, classname, classaddr):
         self.cla_btn_element()
@@ -113,6 +115,9 @@ class AddClassName(Support):
         rmsg = "//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]"
         conf_elem = WebDriverWait(self.driver, 3).until(ex.presence_of_element_located((By.XPATH, rmsg)))
         conf_elem.click()
+        if self.is_element_present_required():
+            close_img = "//div[span[text()='新开班']]/following-sibling::div/img"
+            self.driver.find_element_by_xpath(close_img).click()
 
     def save_classname_page(self):
         self.save_class()
