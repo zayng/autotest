@@ -26,7 +26,9 @@ class AddClassName(Support):
         """点击新增班级按钮"""
         classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
         self.sleep(2)
+        self.log.info("start time.")
         self.driver.find_element_by_xpath(classbtn_loc).click()
+        self.log.info("end time.")
 
     def cla_name_element(self, classname):
         """填写班级名称"""
@@ -113,14 +115,20 @@ class AddClassName(Support):
         savecla.click()
         self.sleep(3)
         rmsg = "//body/div[contains(@id,'messagebox')]//button[span[text()='确定']]"
-        conf_elem = WebDriverWait(self.driver, 3).until(ex.presence_of_element_located((By.XPATH, rmsg)))
+        conf_elem = WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, rmsg)))
         conf_elem.click()
-        if self.is_element_present_required():
-            close_img = "//div[span[text()='新开班']]/following-sibling::div/img"
-            self.driver.find_element_by_xpath(close_img).click()
+        if not self.is_element_present_success():
+            self.close_class()
+
+    def close_class(self):
+        close_img = "//div[span[text()='新开班']]/following-sibling::div/img"
+        self.driver.find_element_by_xpath(close_img).click()
 
     def save_classname_page(self):
         self.save_class()
+
+    def close_classname_page(self):
+        self.close_class()
 
     def add_newclass_page(self, classname=None, classaddr=None, large=0, level=0):
         """包含新增班级所有页面操作
@@ -136,12 +144,17 @@ class AddClassName(Support):
         self.save_classname_page()
 
     def is_element_present_success(self):
+        self.log.info("检测保存成功提示信息")
         success_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
         try:
-            self.driver.find_element_by_xpath(success_msg)
+            self.driver.implicitly_wait(5)
+            # self.driver.find_element_by_xpath(success_msg)
+            WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, success_msg)))
         except (NoSuchElementException, TimeoutException) as e:
             self.log.info(e)
             return False
+        finally:
+            self.driver.implicitly_wait(30)
         return True
 
     def is_element_present_required(self):

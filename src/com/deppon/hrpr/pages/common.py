@@ -18,7 +18,7 @@ class Support(Page):
         frabegin = driver.find_element_by_xpath("//*[@width='97' and @height='9']")
         driver.switch_to_frame(frabegin)
         # driver.switch_to_frame(0)
-        if len(dpdate) > 1:
+        if len(dpdate) == 4:
             dd = driver.find_element_by_xpath("//td[@onclick='day_Click(%s,%s,%s);']"
                                               % (dpdate['yy'], dpdate['mm'], dpdate['dd']))
             dd.click()
@@ -26,7 +26,7 @@ class Support(Page):
             year, month, day = (2015, 11, 5)
             dd = driver.find_element_by_xpath("//td[@onclick='day_Click(%s,%s,%s);']" % (year, month, day))
             dd.click()
-        if len(dptime) > 0:
+        if len(dptime) == 3:
             hour = driver.find_element_by_xpath("//input[@class='tB']")
             ActionChains(driver).double_click(hour).perform()
             hour.send_keys(dptime[0])
@@ -41,13 +41,3 @@ class Support(Page):
         else:
             driver.find_element_by_id("dpTodayInput").click()
         driver.switch_to_default_content()
-
-    def selectclassname(self, key=-1):
-        authlist_locs = "//div[@id='T_authinfo-authClassMng']//tbody/tr[count(td)=14]"
-        authlist_mnts = self.driver.find_elements_by_xpath(authlist_locs)
-        authlist_mnts.pop(key).click()
-
-    def select_authlist_page(self, key=0):
-        self.log.info("开始选择认证班级操作")
-        self.selectclassname(key)
-
