@@ -147,7 +147,7 @@ class AddClassName(Support):
         self.log.info("检测保存成功提示信息")
         success_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
         try:
-            self.driver.implicitly_wait(5)
+            self.driver.implicitly_wait(2)
             # self.driver.find_element_by_xpath(success_msg)
             WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, success_msg)))
         except (NoSuchElementException, TimeoutException) as e:
