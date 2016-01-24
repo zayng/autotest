@@ -7,6 +7,7 @@ Created on '2016/1/18'
 import random
 
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 
 # from com.deppon.hrpr.pages.page import Page
 from com.deppon.hrpr.pages.common import Support
@@ -60,7 +61,7 @@ class AddTask(QueryJudges, Support):
                 return True
             else:
                 return False
-        except NoSuchElementException as e:
+        except (NoSuchElementException, TimeoutException) as e:
             return False
 
     def is_authtasktype2_present(self):
@@ -72,7 +73,7 @@ class AddTask(QueryJudges, Support):
                 return True
             else:
                 return False
-        except NoSuchElementException as e:
+        except (NoSuchElementException, TimeoutException) as e:
             return False
 
     def is_authtasktype3_present(self):
@@ -84,7 +85,7 @@ class AddTask(QueryJudges, Support):
                 return True
             else:
                 return False
-        except NoSuchElementException as e:
+        except (NoSuchElementException, TimeoutException) as e:
             return False
 
     def add_reporttask(self):
