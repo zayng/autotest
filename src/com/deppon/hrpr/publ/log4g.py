@@ -26,7 +26,7 @@ def logger(name='master', file=os.path.join(os.path.abspath('../log'), 'log1.txt
     logger.addHandler(fh)
     return logger
 
-log4g = logger()
+log = logger()
 
 def logger1():
-    return log4g
+    return log

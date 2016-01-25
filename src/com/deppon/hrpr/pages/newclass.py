@@ -10,7 +10,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ex
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import TimeoutException
 
 from com.deppon.hrpr.pages.common import Support
 
@@ -24,11 +23,9 @@ class AddClassName(Support):
 
     def cla_btn_element(self):
         """点击新增班级按钮"""
-        classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
+        classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='1新开班']]"
         self.sleep(2)
-        self.log.info("start time.")
         self.driver.find_element_by_xpath(classbtn_loc).click()
-        self.log.info("end time.")
 
     def cla_name_element(self, classname):
         """填写班级名称"""
@@ -73,6 +70,8 @@ class AddClassName(Support):
         """认证笔试成绩分为专业笔试和专业影响力，系统默认笔试成绩占比20%，专业影响力占比10%。
          0-中级，1-高级，2-资深，3-专家
          其中IT类，IT需求与规划序列，IT研发序列认证笔试成绩占比为0.
+         :param level: 认证层级
+         :param large: 认证大类
         """
         if level in [0, 1, 2]:
             # 专业笔试成绩
@@ -147,24 +146,27 @@ class AddClassName(Support):
         self.log.info("检测保存成功提示信息")
         success_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'保存成功！')]"
         try:
-            self.driver.implicitly_wait(2)
-            # self.driver.find_element_by_xpath(success_msg)
-            WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, success_msg)))
-        except (NoSuchElementException, TimeoutException) as e:
+            self.driver.implicitly_wait(5)
+            self.driver.find_element_by_xpath(success_msg)
+            # WebDriverWait(self.driver, 5).until(ex.presence_of_element_located((By.XPATH, success_msg)))
+            return True
+        except NoSuchElementException as e:
             self.log.info(e)
             return False
         finally:
-            self.driver.implicitly_wait(30)
-        return True
+            self.driver.implicitly_wait(20)
 
     def is_element_present_required(self):
         required_msg = "//div[contains(@id,'messagebox')]//div[contains(text(),'必输项为空或输入有误!')]"
         try:
+            self.driver.implicitly_wait(5)
             self.driver.find_element_by_xpath(required_msg)
-        except (NoSuchElementException, TimeoutException) as e:
+            return True
+        except NoSuchElementException as e:
             self.log.info(e)
             return False
-        return True
+        finally:
+            self.driver.implicitly_wait(20)
 
     @staticmethod
     def write_classname(*args):
