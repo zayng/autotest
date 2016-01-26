@@ -74,7 +74,7 @@ class NewclassTest(unittest.TestCase):
         for la in range(13):
             for le in range(4):
                 add.add_newclass_page(large=la, level=le)
-                self.assertTrue(add.is_element_present_success(), "新增保存失败！")
+                self.assertTrue(add.is_element_present_success(), "新增班级失败！")
 
 if __name__ == '__main__':
     suite = unittest.TestSuite()
@@ -84,14 +84,14 @@ if __name__ == '__main__':
     suite.addTest(NewclassTest("test_add_high_grade"))
     suite.addTest(NewclassTest("test_add_senior_grade"))
     suite.addTest(NewclassTest("test_add_expert_grade"))
+    suite.addTest(NewclassTest("test_add_business"))
 
     reportfile = 'result.html'
     with open(os.path.join(os.path.abspath('../log'), reportfile), 'wb') as rfile:
-        runner = HTMLTestRunner3.HTMLTestRunner(
-                stream=rfile, title="NHR-选拔认证管理测试报告", description="用例执行情况：")
+        runner = HTMLTestRunner3.HTMLTestRunner(stream=rfile,
+                                                title="NHR-选拔认证管理测试报告",
+                                                description="用例执行情况：")
         runner.run(suite)
-
-
 
 
 

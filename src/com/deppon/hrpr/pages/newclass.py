@@ -23,7 +23,7 @@ class AddClassName(Support):
 
     def cla_btn_element(self):
         """点击新增班级按钮"""
-        classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='1新开班']]"
+        classbtn_loc = "//div[@id='T_authinfo-authClassMng']//button[span[text()='新开班']]"
         self.sleep(2)
         self.driver.find_element_by_xpath(classbtn_loc).click()
 
