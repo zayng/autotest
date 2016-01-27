@@ -59,7 +59,7 @@ class Page(object):
 
     @staticmethod
     def sleep(s):
-        return time.sleep(s)
+        time.sleep(s)
 
 class Logger(object):
 
