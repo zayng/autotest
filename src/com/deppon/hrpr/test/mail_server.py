@@ -19,8 +19,12 @@ Subject:test
 
     This is test e-mail.
 """
+
 try:
-    msg = MIMEText(message, _subtype='plain', _charset='utf-8')
+    msg = MIMEText("Hello ,this is test e-mail", _subtype='plain', _charset='utf-8')
+    msg['From'] = sender
+    msg['To'] = receivers
+    msg['Subject'] = "test"
     mailobj.sendmail(sender, receivers, msg.as_string())
     print("发送邮件成功！")
 except SMTPException:

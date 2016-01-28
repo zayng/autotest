@@ -4,27 +4,21 @@ Created on '2016/1/26'
 
 @author: '119937'
 """
-import smtplib
-from smtplib import SMTPException
+# Import the email modules we'll need
+from email.parser import Parser
 
+# If the e-mail headers are in a file, uncomment these two lines:
+# with open(messagefile) as fp:
+#     headers = Parser().parse(fp)
 
-sender = 'zhouyang014@deppon.com'
-receivers = ['zhouyang014@deppon.com', 'gaoli005@deppon.com']
+#  Or for parsing headers in a string, use:
+headers = Parser().parsestr('From: <user@example.com>\n'
+                            'To: <someone_else@example.com>\n'
+                            'Subject: Test message\n'
+                            '\n'
+                            'Body would go here\n')
 
-
-message = """From:From Person <zhouyang014@deppon.com>
-To:To Person <zhouyang014@deppon.com>, gaoli <gaoli005@deppon.com>
-MIME-Version: 1.0
-Content-type: text/html
-Subject: SMTP HTML e-mail 测试邮件
-
-    This is test e-mail.
-    <b>This is HTML message.</b>
-    <h1>This is headline.</h1>
-"""
-try:
-    mailobj = smtplib.SMTP('client.deppon.com', '25')
-    mailobj.sendmail(sender, receivers, message)
-    print("Successfuly sent emial")
-except SMTPException:
-    print("Error:unable to send email")
+#  Now the header items can be accessed as a dictionary:
+print('To: %s' % headers['to'])
+print('From: %s' % headers['from'])
+print('Subject: %s' % headers['subject'])
