@@ -13,7 +13,7 @@ from email.utils import parseaddr, formataddr
 
 def _format_addr(s):
     name, addr = parseaddr(s)
-    return formataddr(Header(name, 'utf-8').encode(), addr)
+    return formataddr((Header(name, 'utf-8').encode(), addr))
 
 from_addr = input("From:")
 password = input("Password:")
@@ -28,7 +28,8 @@ msg['Subject'] = Header("++++++++来自SMTP的测试邮件++++++", charset='utf-
 
 try:
     server = smtplib.SMTP(smtp_server, 25)
-    server.login(from_addr, password)
+    server.set_debuglevel(1)
+    # server.login(from_addr, password)
     server.sendmail(from_addr, [to_addr], msg.as_string())
     print("Successfuly sent emial")
 except SMTPException:
