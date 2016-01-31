@@ -1,0 +1,2 @@
+这么多已定义的类中，我们最常用的的还是smtplib.SMTP类，就具体看看该类的用法：
+smtp实例封装一个smtp连接，它支持所有的SMTP和ESMTP操作指令，如果host和port参数被定义，则smtp会在初始化期间自动调用connect()方法，如果connect()方法失败，则会触发SMTPConnectError异常，timeout参数设置了超时时间。在一般的调用过程中，应该遵connetc()、sendmail()、quit()步骤。

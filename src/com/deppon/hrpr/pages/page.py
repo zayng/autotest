@@ -11,7 +11,7 @@ import os
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 
-from com.deppon.hrpr.publ.log4g import logger1
+from com.deppon.hrpr.publ import log4g
 
 
 class Page(object):
@@ -26,7 +26,7 @@ class Page(object):
         self.base_url = base_url
         self.driver = base_drive
         self.driver.implicitly_wait(20)
-        self.log = logger1()
+        self.log = log4g.log
 
     def open(self):
         self.log.info("启动FireFox浏览器，打开url.")
@@ -59,7 +59,7 @@ class Page(object):
 
     @staticmethod
     def sleep(s):
-        return time.sleep(s)
+        time.sleep(s)
 
 class Logger(object):
 

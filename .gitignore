@@ -4,4 +4,6 @@ __pycache__/
 .project
 .idea/
 .settings/
-src/com/deppon/hrss/log/log.txt
+log/
+log*.txt
+result*.html
