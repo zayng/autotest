@@ -105,7 +105,7 @@ class AddTask(QueryJudges, Support):
         """选择任务开始时间"""
         self.sleep(2)
         self.driver.find_element_by_xpath("//table[@id='judgebegintime-triggerWrap']//td[2]").click()
-        self.select_datetime(10, 45, 22, yy=2016, mm=1, dd=5, fg=1)
+        self.select_datetime(10, 45, 22, yy=2016, mm=2, dd=25, fg=1)
 
     def task_results(self, share):
         """设置任务成绩占比"""

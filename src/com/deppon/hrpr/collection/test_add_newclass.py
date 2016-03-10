@@ -22,11 +22,12 @@ class NewclassTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        pass
+        cls.driver = webdriver.Firefox()
+        cls.login_nhr(self)
 
-    def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.login_nhr()
+    # def setUp(self):
+    #     self.driver = webdriver.Firefox()
+    #     self.login_nhr()
 
     def tearDown(self):
         time.sleep(3)
