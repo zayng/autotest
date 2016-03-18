@@ -20,14 +20,9 @@ class NewclassTest(unittest.TestCase):
         login = LoginNHR(self.driver)
         login.user_login()
 
-    @classmethod
-    def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
-        cls.login_nhr(self)
-
-    # def setUp(self):
-    #     self.driver = webdriver.Firefox()
-    #     self.login_nhr()
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        self.login_nhr()
 
     def tearDown(self):
         time.sleep(3)
@@ -81,11 +76,11 @@ if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(NewclassTest("test_add_classname_empty"))
     suite.addTest(NewclassTest("test_add_classaddr_empty"))
-    suite.addTest(NewclassTest("test_add_middle_grade"))
-    suite.addTest(NewclassTest("test_add_high_grade"))
-    suite.addTest(NewclassTest("test_add_senior_grade"))
-    suite.addTest(NewclassTest("test_add_expert_grade"))
-    suite.addTest(NewclassTest("test_add_business"))
+    # suite.addTest(NewclassTest("test_add_middle_grade"))
+    # suite.addTest(NewclassTest("test_add_high_grade"))
+    # suite.addTest(NewclassTest("test_add_senior_grade"))
+    # suite.addTest(NewclassTest("test_add_expert_grade"))
+    # suite.addTest(NewclassTest("test_add_business"))
 
     reportfile = 'result.html'
     with open(os.path.join(os.path.abspath('../log'), reportfile), 'wb') as rfile:

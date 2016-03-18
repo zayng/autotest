@@ -101,7 +101,7 @@ class AddClassName(Support):
     def addclass_endtime(self):
         end_time = "//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]"
         self.driver.find_element_by_xpath(end_time).click()
-        self.select_datetime(23, 30, 20, yy=2016, mm=2, dd=27, fg=1)
+        self.select_datetime(23, 30, 20, yy=2016, mm=3, dd=27, fg=1)
 
     def set_datetime_page(self):
         """设置新开班级的开始时间和结束时间"""
