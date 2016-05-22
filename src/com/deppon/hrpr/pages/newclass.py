@@ -73,7 +73,7 @@ class AddClassName(Support):
          :param level: 认证层级
          :param large: 认证大类
         """
-        if level in [0, 1, 2]:
+        if level in range(3):
             # 专业笔试成绩
             writtenratio = self.driver.find_element_by_name("writtenratio")
             writtenratio.clear()
@@ -101,7 +101,7 @@ class AddClassName(Support):
     def addclass_endtime(self):
         end_time = "//td[@id='newClassendtime-inputCell']/following-sibling::td/div[1]"
         self.driver.find_element_by_xpath(end_time).click()
-        self.select_datetime(23, 30, 20, yy=2016, mm=1, dd=27, fg=1)
+        self.select_datetime(23, 30, 20, yy=2016, mm=3, dd=27, fg=1)
 
     def set_datetime_page(self):
         """设置新开班级的开始时间和结束时间"""
